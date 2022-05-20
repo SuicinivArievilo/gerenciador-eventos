@@ -2,13 +2,13 @@ import LinkNX from "../src/components/Link"
 import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import LogoCompleta from '../public/LogoCompletaUp'
-import ConteudoCadastro from '../src/components/ConteudoCadastro'
+import ConteudoLogin from '../src/components/ConteudoLogin'
 
-export default function Registro() {
+export default function Login() {
     return (
         <div>
             <LogoCompleta classe={styles.logo} />
-            <ConteudoCadastro classeDiv={styles.white} titulo="Cadastro" href='/login' tipo='submit' nomeLink='Enviar' formatacao='btn btn-lg m-1 btn-primary' />
+            <ConteudoLogin classeDiv={styles.white} titulo="Login" href='/login' tipo='submit' nomeLink='Entrar' formatacao='btn btn-primary btn-lg m-1' />
         </div>
     )
 }

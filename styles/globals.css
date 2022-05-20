@@ -15,3 +15,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.borda {
+  border: 2px solid #023160;
+  border-radius: 5px;
+
+}
+
+.corBotao {
+  color: #fff;
+  background-color: #023160;
+  border-color: #023160;
+}

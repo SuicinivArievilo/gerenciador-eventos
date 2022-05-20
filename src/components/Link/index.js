@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-export default function LinkNX (props) {
+export default function LinkNX(props) {
 
-    return(
+    return (
         <>
-        <Link href={props.href}><button className={props.formatacao}>{props.nomeLink}</button></Link>
+            <Link href={props.href}><button className={props.formatacao} type={props.tipo}>{props.nomeLink}</button></Link>
         </>
     )
 }
