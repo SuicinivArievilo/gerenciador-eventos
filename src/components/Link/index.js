@@ -4,7 +4,7 @@ export default function LinkNX (props) {
 
     return(
         <>
-        <Link href={props.href}>{props.nomeLink}</Link>
+        <Link href={props.href}><button className={props.formatacao}>{props.nomeLink}</button></Link>
         </>
     )
 }
