@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css'
 import '../../../styles/Home.module.css'
 import LinkNX from '../Link'
 

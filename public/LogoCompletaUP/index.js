@@ -8,6 +8,7 @@ export default function LogoCompleta (props) {
         <Image src={Logo} 
         width={190}
         height={60}
+        alt={"Logo Cruzeiro do sul e positivo"}
         />
 
         </div>
