@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import LinkNX from '../Link'
+import LinkBtn from '../LinkBotao'
+import LinkNX from '../LinkNX'
 
 import '../../../styles/Home.module.css'
 
@@ -31,8 +32,8 @@ export default function ConteudoLogin(props) {
                             </div>
                         </div>
                     </div>
-                    <a href='#'><p>Esqueceu a senha?</p></a>
-                    <LinkNX href={props.href} nomeLink={props.nomeLink} tipo={props.tipo} formatacao={props.formatacao} />
+                    <LinkNX hrefLink="#" nomeLink="Esqueceu a senha?"/>
+                    <LinkBtn hrefBtn={props.hrefBtn} nomeBtn={props.nomeBtn} tipoBtn={props.tipoBtn} formBtn={props.formBtn} />
 
                 </div>
             </div>
