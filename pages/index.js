@@ -7,10 +7,15 @@ import ConteudoHomePage from '../src/components/ConteudoHomePage'
 
 export default function Home() {
   return (
-    <div>
-      <LogoCompleta classe={styles.logo} />
+    <div className={styles.blue}>
+      <style jsx global> {`
+                body {
+                     background-color: #023160;
+                `}
+            </style>
+      <LogoCompleta classLogo={styles.logo} />
 
-      <ConteudoHomePage classeDiv={styles.blue} titulo="Bem vindo!" formBtn="btn btn-light btn-lg m-1" hrefBtn="/login" nomeBtn="Entrar" tipoBtn="submit" formLink="btn btn-light btn-lg m-1" hrefLink="/registro" nomeLink="Registrar-se"  texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+      <ConteudoHomePage classeDiv={styles.blue} titulo="Bem vindo!" formBtn=" col-8 h-25 btn btn-light btn-lg m-1" hrefBtn="/login" nomeBtn="Entrar" tipoBtn="submit" formLink="text-light fs-6 text ms-1" hrefLink="/registro" nomeLink="Registrar-se" texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex." />
 
     </div>       
   )

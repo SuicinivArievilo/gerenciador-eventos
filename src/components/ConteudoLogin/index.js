@@ -16,7 +16,7 @@ export default function ConteudoLogin(props) {
                 <div className='py-5 text-center container'>
                     <div className="contact-content">
                         <div className="column right">
-                            <div className='album py-5 container'>
+                            <div className='album pt-5 container'>
                                 <form>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
@@ -28,11 +28,15 @@ export default function ConteudoLogin(props) {
                                             <input className='form-control' type="password" name="content" placeholder="Senha" />
                                         </div>
                                     </div>
+                                    
+                                        <div className='d-flex justify-content-end pb-4'>
+                                            <LinkNX hrefLink="#" nomeLink="Esqueceu a senha?"/>
+                                        </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <LinkNX hrefLink="#" nomeLink="Esqueceu a senha?"/>
+
                     <LinkBtn hrefBtn={props.hrefBtn} nomeBtn={props.nomeBtn} tipoBtn={props.tipoBtn} formBtn={props.formBtn} />
 
                 </div>

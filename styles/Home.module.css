@@ -8,3 +8,13 @@
 .blue {
   background-color: #023160;
 }
+
+.heightFull{
+  height: 100%;
+}
+
+
+.mediaHeader {
+  width: 40%;
+  align-self: center;;
+}

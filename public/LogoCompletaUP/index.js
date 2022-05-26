@@ -12,7 +12,7 @@ export default function LogoCompleta(props) {
 
         <Link href="/">
 
-            <a>
+            <a className={props.classLogo}>
                 <Image src={Logo}
                 width={190}
                 height={60}
