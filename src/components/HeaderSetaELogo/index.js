@@ -3,6 +3,7 @@ import LogoCompleta from '../../../public/LogoCompletaUp'
 import Styles from '../../../styles/Home.module.css'
 
 
+
 export default function HeaderSetaELogo() {
   return (
       
@@ -11,7 +12,7 @@ export default function HeaderSetaELogo() {
     <style jsx> {`div {background-color: #023160;} `} </style>
 
      
-
+ 
    
       <SetaVoltar classSeta={Styles.mediaHeader}/>
       <LogoCompleta classLogo={Styles.mediaHeader}/>
