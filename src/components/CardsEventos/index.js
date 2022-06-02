@@ -4,7 +4,6 @@ import CalendarIcon from "./Calendar.png"
 import TagIcon from "./Tag.png"
 import Image from 'next/image'
 
-
 export default function CardsEventos(props) {
   return (
     <><div>

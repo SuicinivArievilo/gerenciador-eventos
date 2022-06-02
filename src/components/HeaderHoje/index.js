@@ -1,29 +1,30 @@
+import LinkNX from "../LinkNX";
 
-export default function HeaderHoje(){
-    return (
-      
-        <div class="px-2 d-flex justify-content-between w-100">
-          
-                <header class="masthead d-flex w-100 h-100 p-2 flex-column">
-                  <div class="nav nav-masthead justify-content-center ">
-                  <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                    <a class="nav-link" id="pills-passsados-tab" data-toggle="pill" href="#pills-passados" role="tab" aria-controls="pills-passados" aria-selected="false">Passados</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link active" id="pills-hoje-tab" data-toggle="pill" href="#pills-hoje" role="tab" aria-controls="pills-hoje" aria-selected="true">Hoje</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" id="pills-chegando-tab" data-toggle="pill" href="#pills-chegando" role="tab" aria-controls="pills-chegando" aria-selected="false">Chegando</a>
-                    </li>
-                  </ul>
-                   <div class="tab-content" id="pills-tabContent">
-                   <div class="tab-pane fade show active" id="pills-hoje" role="tabpanel" aria-labelledby="pills-hoje-tab"></div>
-                   <div class="tab-pane fade" id="pills-passados" role="tabpanel" aria-labelledby="pills-passados-tab"></div>
-                   <div class="tab-pane fade" id="pills-chegando" role="tabpanel" aria-labelledby="pills-chegando-tab"></div>
-                   </div>
-                  </div>
-                </header>
-            </div>
-    );
-    }
+export default function HeaderHoje(props) {
+  return (
+
+    <div className="px-2 d-flex justify-content-between w-100">
+
+      <header className="masthead d-flex w-100 h-100 p-2 flex-column">
+        <div className="nav nav-masthead justify-content-center ">
+          <ul className="nav nav-pills mb-2" role="tablist">
+            <li className="nav-item">
+              <LinkNX hrefLink="/eventosPassados" nomeLink="Passados" formLink="nav-link" />
+            </li>
+            <li className="nav-item">
+              <LinkNX hrefLink="/eventos" nomeLink="Hoje" formLink="nav-link active" />
+            </li>
+            <li className="nav-item">
+              <LinkNX hrefLink="/eventosChegando" nomeLink="Chegando" formLink="nav-link" />
+            </li>
+          </ul>
+          <div className="tab-content">
+            <div className="tab-pane fade show active" role="tabpanel"></div>
+            <div className="tab-pane fade" role="tabpanel"></div>
+            <div className="tab-pane fade" role="tabpanel"></div>
+          </div>
+        </div>
+      </header>
+    </div>
+  );
+}

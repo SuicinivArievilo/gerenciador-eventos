@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/comfortaa": "^4.5.8",
+    "@fontsource/work-sans": "^4.5.10",
     "bootstrap": "^5.1.3",
     "next": "12.1.6",
     "react": "18.1.0",

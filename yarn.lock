@@ -32,6 +32,16 @@
     "minimatch" "^3.1.2"
     "strip-json-comments" "^3.1.1"
 
+"@fontsource/comfortaa@^4.5.8":
+  "integrity" "sha512-uxm8kAGboSehNTDi5ah5Bh1ALazo+WfXqMEJP/aigHY37pUPaLGDzNscP7aXiPpOH2GKpCKe7ySiqdnLZx+NYQ=="
+  "resolved" "https://registry.npmjs.org/@fontsource/comfortaa/-/comfortaa-4.5.8.tgz"
+  "version" "4.5.8"
+
+"@fontsource/work-sans@^4.5.10":
+  "integrity" "sha512-Qocfv97QO8WRZxV0xoeFhDypXaqGedAGlpHi2CXOfcPKyYOMlXfgzm3hWhw+t+4qGJfVRzqEvNMAnbL5Gwjgmw=="
+  "resolved" "https://registry.npmjs.org/@fontsource/work-sans/-/work-sans-4.5.10.tgz"
+  "version" "4.5.10"
+
 "@humanwhocodes/config-array@^0.9.2":
   "integrity" "sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz"
