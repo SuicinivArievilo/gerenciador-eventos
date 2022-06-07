@@ -4,6 +4,8 @@ import ConteudoHomePage from '../src/components/ConteudoHomePage'
 
 
 
+
+
 export default function Home() {
   return (
     <div className={styles.blue}>

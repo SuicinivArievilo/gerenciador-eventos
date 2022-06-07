@@ -5,19 +5,10 @@ import TagIcon from "./Tag.png"
 import Image from 'next/image'
 
 export default function CardsEventos(props) {
+  
   return (
-    <><div>
-      <style jsx global> {`body {background-color: #FFFFFF;`}</style>
-      
-      <style jsx>{` p {color: #656565; 
-                        font-family: 'Work Sans';
-                        font-size: 1px;
-                        width: 400px;
-                        height: 16px;                 
-                        letter-spacing: -0.33px;
-                        }
-      `}</style>
-
+    
+    <>
       <div className="album py-5 bg-light">
         <div className="container">
 
@@ -42,8 +33,8 @@ export default function CardsEventos(props) {
           </div>
         </div>
       </div>
-   </div>
-    </>
+   </>
+    
     )
     }
  

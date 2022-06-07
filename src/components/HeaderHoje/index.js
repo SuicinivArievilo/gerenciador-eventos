@@ -5,8 +5,8 @@ export default function HeaderHoje(props) {
 
     <div className="px-2 d-flex justify-content-between w-100">
 
-      <header className="masthead d-flex w-100 h-100 p-2 flex-column">
-        <div className="nav nav-masthead justify-content-center ">
+      <header className=" masthead d-flex w-100 h-100 p-2 flex-column">
+        <div className="nav  nav-masthead justify-content-center ">
           <ul className="nav nav-pills mb-2" role="tablist">
             <li className="nav-item">
               <LinkNX hrefLink="/eventosPassados" nomeLink="Passados" formLink="nav-link" />
