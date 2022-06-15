@@ -7,8 +7,11 @@ export default function CardImage() {
     return ( 
         <Image src={BannerPng}
         alt={"Banner"}
+        width={500} 
+        height={244}
         />
     )
+    
 }
 
 
