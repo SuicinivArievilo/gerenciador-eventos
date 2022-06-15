@@ -1,10 +1,12 @@
 import CardsEventos from "../src/components/CardsEventos";
 import HeaderHoje from "../src/components/HeaderHoje";
 import BotaoEvento from "../src/components/BotaoEvento";
+import styles from '../styles/Home.module.css'
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Eventos() {
+  <style jsx global> {`body {background-color: #FFFFFF;`}</style>
 
   const [eventos, setEventos] = useState([]);
   useEffect(() => {
@@ -18,7 +20,7 @@ export default function Eventos() {
 
   return (
     <div>
-      <HeaderHoje/>
+      <HeaderHoje formPassados={styles.navCustomLink} formHoje={styles.navActive} formChegando={styles.navCustomLink} headerBg={styles.navBg}/>
 
       {eventos?.map((evento) => (
         <CardsEventos key={evento._id} tituloEvento={evento.nome} dataEvento={evento.data} localEvento={evento.local} categEvento={evento.categoria} />

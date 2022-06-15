@@ -23,3 +23,23 @@
   background-color: white;
 }
 
+.navCustomLink {
+  color: #FFFFFF;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+}
+.navActive{
+  background-color: #FFFFFF;
+  color: #023160;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.navBg{
+  background-color: #023160;
+}
+
+
+
