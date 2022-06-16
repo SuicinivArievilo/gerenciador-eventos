@@ -4,7 +4,7 @@ import Styles from '../../../styles/Home.module.css'
 
 
 
-export default function HeaderSetaELogo() {
+export default function HeaderSetaELogo(props) {
   return (
       
     <div className="px-2 d-flex justify-content-between w-100">
@@ -14,7 +14,7 @@ export default function HeaderSetaELogo() {
      
  
    
-      <SetaVoltar classSeta={Styles.mediaHeader}/>
+      <SetaVoltar classSeta={Styles.mediaHeader} BtnBack={props.BtnBack}/>
       <LogoCompleta classLogo={Styles.mediaHeader}/>
       
      

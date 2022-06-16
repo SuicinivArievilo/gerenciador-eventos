@@ -6,7 +6,7 @@ import Seta from './seta-voltar.png'
 export default function SetaVoltar(props) {
     return (
 
-        <Link href="/">
+        <Link href={props.BtnBack}>
 
             <a className={props.classSeta}>
                 <Image src={Seta}

@@ -40,3 +40,7 @@
 .navBg{
   background-color: #023160;
 }
+
+.roundedBanner img{
+  border-radius: 1rem;
+}

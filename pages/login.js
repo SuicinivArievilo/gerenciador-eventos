@@ -5,7 +5,7 @@ import ConteudoLogin from "../src/components/ConteudoLogin"
 export default function Login() {
     return (
         <div>
-            <HeaderSetaELogo />
+            <HeaderSetaELogo BtnBack="/" />
             <ConteudoLogin classeDiv={styles.white} titulo="Login" hrefBtn="/eventos" tipoBtn="submit" nomeBtn="Entrar" formBtn="btn btn-primary btn-lg m-1 w-50" />
         </div>
     )
