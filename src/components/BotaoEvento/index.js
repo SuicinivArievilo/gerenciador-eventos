@@ -1,18 +1,14 @@
-
-import Image from 'next/image'
-import BotaoIcon from "./Botao.png"
 import Link from 'next/link'
 
 export default function BotaoEvento(props) {
 
     return (
         <div className="col-md-12 text-center">
-        <Link href="/registroEvento">
-        <a className="" >
-        <Image className="img-responsive" src={BotaoIcon} width={70} height={65} alt="Imagen logo botao" />
-        </a>
-    </Link>
-    </div>
+            <Link href="/registroEvento">
+                <a className="btn btn-primary btn-lg m-1 w-40 rounded2">+</a>
+                
+            </Link>
+        </div>
 
     )
 }

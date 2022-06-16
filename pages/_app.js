@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import "../styles/css/bootstrap.css"
 import  "@fontsource/work-sans";
 import  "@fontsource/comfortaa";
 

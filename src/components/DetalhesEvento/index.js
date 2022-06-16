@@ -12,7 +12,7 @@ export default function DescricaoEvento(props) {
   return (
     
     <>
-      <div class="album py-5 bg-light">
+      <div className="album py-5 bg-light">
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
@@ -25,12 +25,12 @@ export default function DescricaoEvento(props) {
                   <p className="fs-6 text"><Image src={LocalIcon} width={16} height={16} alt="Imagen logo local" />{props.localEvento}</p>
                   <p className="fs-6 text"><Image src={TagIcon} width={16} height={16} alt="Imagen logo tag" />{props.categEvento}</p>
                   <div className="">
-                  <p class="h5">Descrição do evento: </p>
+                  <p className="h5">Descrição do evento: </p>
                   </div>
                   <div>
-                  <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.</small>
+                  <small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.</small>
                   </div>
-                  <p class="h6">Fotos: </p>  
+                  <p className="h6">Fotos: </p>  
                   <FotoEvento/> <FotoEvento/>
                 </div>
               </div>

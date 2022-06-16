@@ -11,8 +11,8 @@ export default function ConteudoCadastroEvento(props) {
                 {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> */}
             </Head>
             <div className='container-md'>
-                <h1 className='text-blue display-1 pt-5 text-center'>{props.titulo}</h1>
-                <div className='py-5 text-center container'>
+                <h1 className='text-blue display-4 pt-5 text-center'>{props.titulo}</h1>
+                <div className='text-center container'>
                     <div className="contact-content">
                         <div className="column right">
                             <div className='album py-5 container'>
@@ -29,7 +29,7 @@ export default function ConteudoCadastroEvento(props) {
                                     </div>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
-                                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrição"></textarea>
+                                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrição"></textarea>
                                         </div>
                                     </div>
                                     <div className="fields mb-3 borda">
@@ -41,16 +41,17 @@ export default function ConteudoCadastroEvento(props) {
                                         <div className="field name">
                                             <input className='form-control' type="text" name="local" placeholder="Local" />
                                         </div>
-                                    </div><br></br><br></br>
-                                    <div className="mb-3">
-                                            <h4>Banner do Evento</h4>
-                                            <input className="form-control" type="file" id="formFile"/>
                                     </div>
+                                    <div className="fields mb-3 custom-file">
+                                        <input type="file" className="custom-file-input" id="customFileLang" lang="es" />
+                                        <label className="custom-file-label">Escolher Banner</label>
+                                    </div>
+                                    <LinkBtn hrefBtn={props.hrefBtn} nomeBtn={props.nomeBtn} tipoBtn={props.tipoBtn} formBtn={props.formBtn} />
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <LinkBtn hrefBtn={props.hrefBtn} nomeBtn={props.nomeBtn} tipoBtn={props.tipoBtn} formBtn={props.formBtn} />
+
                 </div>
             </div>
         </div>
