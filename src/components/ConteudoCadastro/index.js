@@ -16,7 +16,9 @@ export default function CriarUsuario(props) {
     } = useForm();
 
     const cadastrarUsuario = (data) => {
-        axios.post('/usuario', data);
+        axios.post('/usuario', data, axiosConfig);
+        console.log(axiosConfig);
+        console.log(data);
         alert('sucesso');
         reset();
     };

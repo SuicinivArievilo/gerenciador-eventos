@@ -19,7 +19,7 @@ export default function ConteudoRecuperarSenha(props) {
                                 <h5 id='h5'>Digite no campo abaixo o seu email cadastrado e em seguida click em recuperar para um retorno de uma nova senha</h5>
                                 <br></br>
                                 <form>
-                                <div class="mb-3">
+                                <div className="mb-3">
                                  <input type="email" className="form-control" id="emailSenha" placeholder="Digite o email cadastrado"></input>
                                  </div>
                                 </form>
