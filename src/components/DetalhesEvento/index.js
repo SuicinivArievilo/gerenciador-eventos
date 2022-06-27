@@ -28,7 +28,7 @@ export default function DescricaoEvento(props) {
                   <p className="h5">Descrição do evento: </p>
                   </div>
                   <div>
-                  <small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus ornare odio eu finibus. Nullam elit orci, lobortis eu enim ut, mollis placerat metus. Sed iaculis sem non tellus pretium elementum.</small>
+                  <small className="text-muted">{props.descEvento}</small>
                   </div>
                   <p className="h6">Fotos: </p>  
                   <FotoEvento/> <FotoEvento/>

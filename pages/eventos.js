@@ -10,7 +10,7 @@ export default function Eventos() {
     useEffect(() => {
         try {
             axios
-                .get('https://eventos-api.vercel.app/evento')
+                .get('http://18.231.37.81:3000/evento')
                 .then((response) => {
                     setEventos(response.data);
                 });
@@ -38,7 +38,7 @@ export default function Eventos() {
                     dataEvento={evento.data}
                     localEvento={evento.local}
                     categEvento={evento.categoria}
-                    hrefBtn="/detalhes"
+                    hrefBtn={"detalhes/"+evento._id}
                     nomeBtn="Visualizar"
                     tipoBtn="submit"
                     formBtn="btn btn-lg m-1 btn-primary py-1"
