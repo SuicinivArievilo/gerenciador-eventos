@@ -9,7 +9,6 @@ export default function RegistroEvento() {
             <ConteudoCadastroEvento
                 classeDiv={styles.white}
                 titulo="Novo Evento"
-                hrefBtn="/eventos"
                 tipoBtn="submit"
                 nomeBtn="Enviar"
                 formBtn="btn btn-lg m-1 btn-primary"
