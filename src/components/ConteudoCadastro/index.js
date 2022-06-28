@@ -1,19 +1,32 @@
 import Head from 'next/head';
 import LinkBtn from '../LinkBotao';
 import axios from '../../services/axios';
-import { useForm } from 'react-hook-form';
+import { appendErrors, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 
 import '../../../styles/Home.module.css';
+
 
 //export default function ConteudoCadastro(props) {
 
 export default function CriarUsuario(props) {
+
+    const schema = yup.object({
+        nome: yup.string().required("Este campo é obrigatório"),
+        sobrenome: yup.string().required("Este campo é obrigatório"),
+        email: yup.string().required("Este campo é obrigatório").email("Insira um email válido"),
+        senha: yup.string().required("Este campo é obrigatório").min(10, "Mínimo de 10 caracteres")
+    }).required();
+
     const {
         register,
         handleSubmit,
-        formState: { erros },
+        formState: { errors },
         reset
-    } = useForm();
+    } = useForm({
+        resolver: yupResolver(schema)
+    });
 
     const cadastrarUsuario = (data) => {
         axios.post('/usuario', data);
@@ -36,6 +49,7 @@ export default function CriarUsuario(props) {
                         <div className="column right">
                             <div className="album py-5 container">
                                 <form onSubmit={handleSubmit(cadastrarUsuario)}>
+                                <span>{errors.nome?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -44,21 +58,23 @@ export default function CriarUsuario(props) {
                                                 name="name"
                                                 {...register('nome')}
                                                 placeholder="Nome"
-                                                required
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.sobrenome?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
                                                 className="form-control"
                                                 type="text"
-                                                name="sobrenome"
+                                                name="sobrenome" 
                                                 {...register('sobrenome')}
                                                 placeholder="Sobrenome"
                                             />
+                                            
                                         </div>
                                     </div>
+                                    <span>{errors.email?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -70,6 +86,7 @@ export default function CriarUsuario(props) {
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.senha?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input

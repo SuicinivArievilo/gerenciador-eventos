@@ -3,14 +3,15 @@ import HeaderHoje from '../src/components/HeaderHoje';
 import BotaoEvento from '../src/components/BotaoEvento';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '/src/services/axios';
+
 
 export default function Eventos() {
     const [eventos, setEventos] = useState([]);
     useEffect(() => {
         try {
             axios
-                .get('http://18.231.37.81:3000/evento')
+                .get('/listarEventosHoje')
                 .then((response) => {
                     setEventos(response.data);
                 });

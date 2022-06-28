@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import HeaderSetaELogo from '../../src/components/HeaderSetaELogo';
 import DescricaoEvento from '../../src/components/DetalhesEvento';
 import BotaoEvento from '../../src/components/BotaoEvento';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '/src/services/axios';
 
 export default function Detalhes() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function Detalhes() {
     if (idRouter != undefined) {
 
       axios
-        .get(`http://18.231.37.81:3000/evento/${idRouter}`)
+        .get(`/evento/${idRouter}`)
         .then((response) => {
           setDetalhes(response.data);
 
@@ -25,22 +26,50 @@ export default function Detalhes() {
 
       console.log(detalhes)
     }
-    
-
+ 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idRouter]);
-1
 
 
+const [usuarioDocente, setUsuarioDocente] = useState([]);
+   useEffect(() => {
+    if(detalhes.usuario != undefined){
+      axios
+        .get(`/usuario/${detalhes.usuario}`)
+        .then((response) => {
+          setUsuarioDocente(response.data);
 
-  return (
+        });
+        console.log(usuarioDocente)
+      }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [detalhes.usuario]);
+
+
+  return typeof detalhes.nome == 'undefined' ? (
+    detalhes ? (
+    <div>
+
+<HeaderSetaELogo BtnBack="/eventos" />
+<h1>infelizmente não encontramos um evento para essa pagina :(</h1>
+      
+    </div>
+  ) : ( 
     <div>
       <HeaderSetaELogo BtnBack="/eventos" />
+      <h1>infelizmente não encontramos um evento para essa pagina :(</h1>
+    </div>
+  )
+
+) : <div>
+
+<HeaderSetaELogo BtnBack="/eventos" />
       <DescricaoEvento
 
          key={detalhes?._id}
          tituloEvento={detalhes?.nome}
-        //  docenteEvento={StringDetails}
+         docenteEvento={usuarioDocente?.nome}
          dataEvento={detalhes?.data}
          localEvento={detalhes?.local}
          categEvento={detalhes?.categoria}
@@ -54,7 +83,7 @@ export default function Detalhes() {
         nomeBtn="Entrar"
         formBtn="btn btn-primary btn-lg m-1 w-50"
       />
-    </div>
-  );
-}
 
+</div>
+
+  }
