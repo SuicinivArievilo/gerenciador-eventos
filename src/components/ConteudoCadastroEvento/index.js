@@ -3,6 +3,7 @@ import LinkBtn from '../LinkBotao';
 //import axios from '../../services/axios';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 
 import '../../../styles/Home.module.css';
 
@@ -14,13 +15,46 @@ export default function ConteudoCadastroEvento(props) {
         reset
     } = useForm();
 
-    const cadastrarEvento = (data) => {
-        axios.post('http://18.231.37.81:3000/evento', data);
-        console.log(data);
-        //alert('sucesso');
+    const [file, setFile] = useState();
+
+    const cadastrarEvento = async (data) => {
+        //Realizando cadastro de evento
+        const response = await axios.post(
+            'http://18.231.37.81:3000/evento',
+            data
+        );
+
+        //Formando dados de foto
+        let formData = new FormData();
+        formData.append(
+            'evento',
+            response.data._id || '62c24f869c129a03e17841a0'
+        );
+        formData.append('banner', true);
+        formData.append('file', file);
+        const config = {
+            headers: { 'content-type': 'multipart/form-data' }
+        };
+
+        //Realizando cadastro de foto
+        await axios.post('http://18.231.37.81:3000/foto', formData, config);
+
+        alert('Success!');
         reset();
     };
+    console.log(file);
+    const handleChange = (e) => {
+        const [f] = e.target.files;
+        setFile(f);
+    };
 
+    /* const cadastrarFoto = (evento, banner, file) =>{
+        axios.post('http://18.231.37.81:3000/foto',{
+            evento:'629ea5692e9fa017cc168eea',
+            banner:true,
+            file:
+        })
+    };*/
     return (
         <div className={props.classeDiv}>
             <Head>
@@ -76,7 +110,7 @@ export default function ConteudoCadastroEvento(props) {
                                                 className="form-control"
                                                 id="descricao"
                                                 rows="3"
-                                                {...register('descriacao')}
+                                                {...register('descricao')}
                                                 placeholder="Descrição"
                                             ></textarea>
                                         </div>
@@ -119,12 +153,16 @@ export default function ConteudoCadastroEvento(props) {
                                             type="file"
                                             className="custom-file-input"
                                             id="customFileLang"
-                                            lang="es"
+                                            lang="pt-br"
+                                            onChange={handleChange}
+                                            multiple={false}
                                         />
                                         <label className="custom-file-label">
                                             Escolher Banner
                                         </label>
                                     </div>
+                                    {file ? file.name : ''}
+                                    <br />
                                     <LinkBtn
                                         nomeBtn={props.nomeBtn}
                                         tipoBtn={props.tipoBtn}
