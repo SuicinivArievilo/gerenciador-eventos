@@ -38,6 +38,7 @@ useEffect(() => {
             {eventosPassados?.map((eventoPassado) => (
             <CardsEventos
                 key={eventoPassado._id}
+                idEvento={eventoPassado._id}
                 tituloEvento={eventoPassado.nome}
                 dataEvento={eventoPassado.data}
                 localEvento={eventoPassado.local}

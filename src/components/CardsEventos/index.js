@@ -6,6 +6,8 @@ import Image from "next/image";
 import LinkBtn from "../LinkBotao";
 
 export default function CardsEventos(props) {
+
+  
   return (
     <>
       <div className="album pt-3 bg-light">
@@ -13,10 +15,10 @@ export default function CardsEventos(props) {
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col p-2">
               <div className="card-header shadow-sm p-2 bg-body rounded">
-                <CardImage />
+                <CardImage idEvento={props.idEvento}/>
                 <div className="row justify-content-center">
                 <h5 className="card-title text-center">
-                        {props.tituloEvento}
+                        {props.tituloEvento} 
                       </h5>
                   <div className="col-12 card-body">
                     <div className="justify-content-around row col-12">

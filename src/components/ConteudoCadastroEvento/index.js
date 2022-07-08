@@ -2,18 +2,34 @@ import Head from 'next/head';
 import LinkBtn from '../LinkBotao';
 //import axios from '../../services/axios';
 import axios from 'axios';
-import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
+import { appendErrors, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 
 import '../../../styles/Home.module.css';
 
 export default function ConteudoCadastroEvento(props) {
+
+    const schema = yup.object({
+        nome: yup.string().required("Nome obrigatório"),
+        usuario: yup.string().required("Usuário obrigatório"),
+        data: yup.string().required("Data obrigatório"),
+        descricao: yup.string().required("Descrição obrigatório"),
+        categoria: yup.string().required("Categoria obrigatório"),
+        local: yup.string().required("Local obrigatório"),
+        palavraChave: yup.string().required("Palavra Chave obrigatório").min(2, "Mínimo de 2 caracteres")
+    }).required();
+
+
     const {
         register,
         handleSubmit,
-        formState: { erros },
+        formState: { errors },
         reset
-    } = useForm();
+    } = useForm({
+        resolver: yupResolver(schema)
+    });
 
     const [file, setFile] = useState();
 
@@ -69,6 +85,7 @@ export default function ConteudoCadastroEvento(props) {
                         <div className="column right">
                             <div className="album py-5 container">
                                 <form onSubmit={handleSubmit(cadastrarEvento)}>
+                                <span>{errors.nome?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -77,10 +94,11 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="name"
                                                 {...register('nome')}
                                                 placeholder="Nome"
-                                                required
+                                                
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.usuario?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -89,10 +107,11 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="id"
                                                 {...register('usuario')}
                                                 placeholder="id"
-                                                required
+                                                
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.data?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -101,9 +120,11 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="data"
                                                 {...register('data')}
                                                 placeholder="Data"
+                                                
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.descricao?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <textarea
@@ -112,9 +133,11 @@ export default function ConteudoCadastroEvento(props) {
                                                 rows="3"
                                                 {...register('descricao')}
                                                 placeholder="Descrição"
+                                                
                                             ></textarea>
                                         </div>
                                     </div>
+                                    <span>{errors.categoria?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -123,9 +146,11 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="categoria"
                                                 {...register('categoria')}
                                                 placeholder="Categoria"
+                                                
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.local?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -134,9 +159,11 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="local"
                                                 {...register('local')}
                                                 placeholder="Local"
+                                                
                                             />
                                         </div>
                                     </div>
+                                    <span>{errors.palavraChave?.message}</span> 
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -145,6 +172,7 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="palavraChave"
                                                 {...register('palavraChave')}
                                                 placeholder="Palavra Chave"
+                                                
                                             />
                                         </div>
                                     </div>

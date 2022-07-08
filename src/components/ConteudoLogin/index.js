@@ -1,36 +1,49 @@
 import Head from 'next/head'
 import LinkBtn from '../LinkBotao'
 import LinkNX from '../LinkNX'
-import Link from 'next/link'
+import Script from 'next/script'
 import axios from '../../services/axios';
 import '../../../styles/Home.module.css'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 
 export default function ConteudoLogin(props) {
 
+    const [tokenJwt, setTokenJwt, userToken] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [tokenJwt, setTokenJwt] = useState("");
 
-
-
-    const login = () => {
-      
-        axios.post("/auth", {
+    const login = async (e) => {
+    
+        try{ const res = await axios.post("/auth", {
             email: email,
             senha: senha,
         }).then((response) => {
             setTokenJwt(response.data.token);
-            // localStorage.setItem("token", tokenJwt) 
-            console.log(tokenJwt);
+            localStorage.setItem("token", tokenJwt) 
+            console.log('Esse é o jwt'+tokenJwt);
+
+            userToken = localStorage.getItem("token");
+            console.log('Esse é o userToken'+userToken);
+
+            if(userToken !== undefined && userToken !== "") {
+                window.location.href ="/eventos"
+            }
         })
+
+        } catch(err) {
+            console.log(err);
+        }
+    
+        
     }
     
+   
 
 
     return (
+    
         <div className={props.classeDiv}>
             <Head>
             </Head>
@@ -40,7 +53,10 @@ export default function ConteudoLogin(props) {
                     <div className="contact-content">
                         <div className="column right">
                             <div className='album pt-5 container'>
-                                <form>
+                                <form onSubmit={async e => {
+                                    e.preventDefault();
+                                    await login();
+                                }}>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input 
@@ -49,6 +65,7 @@ export default function ConteudoLogin(props) {
                                             placeholder="Email" 
                                             onChange={(e) => {
                                                 setEmail(e.target.value);
+                                                console.log(email);
                                             }}
                                             />
                                         </div>
@@ -62,6 +79,7 @@ export default function ConteudoLogin(props) {
                                             placeholder="Senha"
                                             onChange={(e) => {
                                                 setSenha(e.target.value);
+                                                console.log(senha);
                                             }}
                                             />
                                         </div>

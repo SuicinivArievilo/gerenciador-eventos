@@ -47,23 +47,9 @@ const [usuarioDocente, setUsuarioDocente] = useState([]);
   }, [detalhes.usuario]);
 
 
-  return typeof detalhes.nome == 'undefined' ? (
+  return typeof detalhes.nome !== 'undefined' ? (
     detalhes ? (
     <div>
-
-<HeaderSetaELogo BtnBack="/eventos" />
-<h1>infelizmente não encontramos um evento para essa pagina :(</h1>
-      
-    </div>
-  ) : ( 
-    <div>
-      <HeaderSetaELogo BtnBack="/eventos" />
-      <h1>infelizmente não encontramos um evento para essa pagina :(</h1>
-    </div>
-  )
-
-) : <div>
-
 <HeaderSetaELogo BtnBack="/eventos" />
       <DescricaoEvento
 
@@ -83,6 +69,19 @@ const [usuarioDocente, setUsuarioDocente] = useState([]);
         nomeBtn="Entrar"
         formBtn="btn btn-primary btn-lg m-1 w-50"
       />
+
+      
+    </div>
+  ) : ( 
+    <div>
+    
+    </div>
+  )
+
+) : <div>
+
+<HeaderSetaELogo BtnBack="/eventos" />
+<h1>infelizmente não encontramos um evento para essa pagina</h1>
 
 </div>
 

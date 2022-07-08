@@ -31,6 +31,7 @@ export default function eventosChegando() {
             />
             {listarEventosFuturos?.map((eventoFuturo) => (
               <CardsEventos
+              idEvento={eventoFuturo._id}
               key={eventoFuturo._id}
               tituloEvento={eventoFuturo.nome}
               dataEvento={eventoFuturo.data}

@@ -18,10 +18,15 @@ export default function Eventos() {
             console.log(eventos);
         } catch (error) {
             alert('falha ao buscar eventos');
-        }
-
+        }       
         //eslint-disable-next-line
     }, []);
+
+ 
+   
+       
+
+
 
     return (
         <div>
@@ -32,8 +37,11 @@ export default function Eventos() {
                 headerBg={styles.navBg}
             />
 
-            {eventos?.map((evento) => (
+            
+            {eventos?.map((evento) => (  
+                    
                 <CardsEventos
+                    idEvento={evento._id}
                     key={evento._id}
                     tituloEvento={evento.nome}
                     dataEvento={evento.data}
@@ -55,4 +63,4 @@ export default function Eventos() {
             />
         </div>
     );
-}
+} 
