@@ -5,22 +5,25 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
+import * as yup from 'yup';
 
 import '../../../styles/Home.module.css';
 
 export default function ConteudoCadastroEvento(props) {
-
-    const schema = yup.object({
-        nome: yup.string().required("Nome obrigatório"),
-        usuario: yup.string().required("Usuário obrigatório"),
-        data: yup.string().required("Data obrigatório"),
-        descricao: yup.string().required("Descrição obrigatório"),
-        categoria: yup.string().required("Categoria obrigatório"),
-        local: yup.string().required("Local obrigatório"),
-        palavraChave: yup.string().required("Palavra Chave obrigatório").min(2, "Mínimo de 2 caracteres")
-    }).required();
-
+    const schema = yup
+        .object({
+            nome: yup.string().required('Nome obrigatório'),
+            usuario: yup.string().required('Usuário obrigatório'),
+            data: yup.string().required('Data obrigatório'),
+            descricao: yup.string().required('Descrição obrigatório'),
+            categoria: yup.string().required('Categoria obrigatório'),
+            local: yup.string().required('Local obrigatório'),
+            palavraChave: yup
+                .string()
+                .required('Palavra Chave obrigatório')
+                .min(2, 'Mínimo de 2 caracteres')
+        })
+        .required();
 
     const {
         register,
@@ -39,12 +42,12 @@ export default function ConteudoCadastroEvento(props) {
             'http://18.231.37.81:3000/evento',
             data
         );
-
+        console.log(data);
         //Formando dados de foto
         let formData = new FormData();
         formData.append(
             'evento',
-            response.data._id || '62c24f869c129a03e17841a0'
+            response.data.id || '62c24f869c129a03e17841a0'
         );
         formData.append('banner', true);
         formData.append('file', file);
@@ -64,13 +67,6 @@ export default function ConteudoCadastroEvento(props) {
         setFile(f);
     };
 
-    /* const cadastrarFoto = (evento, banner, file) =>{
-        axios.post('http://18.231.37.81:3000/foto',{
-            evento:'629ea5692e9fa017cc168eea',
-            banner:true,
-            file:
-        })
-    };*/
     return (
         <div className={props.classeDiv}>
             <Head>
@@ -85,7 +81,7 @@ export default function ConteudoCadastroEvento(props) {
                         <div className="column right">
                             <div className="album py-5 container">
                                 <form onSubmit={handleSubmit(cadastrarEvento)}>
-                                <span>{errors.nome?.message}</span> 
+                                    <span>{errors.nome?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -94,11 +90,10 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="name"
                                                 {...register('nome')}
                                                 placeholder="Nome"
-                                                
                                             />
                                         </div>
                                     </div>
-                                    <span>{errors.usuario?.message}</span> 
+                                    <span>{errors.usuario?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -107,11 +102,10 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="id"
                                                 {...register('usuario')}
                                                 placeholder="id"
-                                                
                                             />
                                         </div>
                                     </div>
-                                    <span>{errors.data?.message}</span> 
+                                    <span>{errors.data?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -120,11 +114,10 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="data"
                                                 {...register('data')}
                                                 placeholder="Data"
-                                                
                                             />
                                         </div>
                                     </div>
-                                    <span>{errors.descricao?.message}</span> 
+                                    <span>{errors.descricao?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <textarea
@@ -133,11 +126,10 @@ export default function ConteudoCadastroEvento(props) {
                                                 rows="3"
                                                 {...register('descricao')}
                                                 placeholder="Descrição"
-                                                
                                             ></textarea>
                                         </div>
                                     </div>
-                                    <span>{errors.categoria?.message}</span> 
+                                    <span>{errors.categoria?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -146,11 +138,10 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="categoria"
                                                 {...register('categoria')}
                                                 placeholder="Categoria"
-                                                
                                             />
                                         </div>
                                     </div>
-                                    <span>{errors.local?.message}</span> 
+                                    <span>{errors.local?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -159,11 +150,10 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="local"
                                                 {...register('local')}
                                                 placeholder="Local"
-                                                
                                             />
                                         </div>
                                     </div>
-                                    <span>{errors.palavraChave?.message}</span> 
+                                    <span>{errors.palavraChave?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
@@ -172,7 +162,6 @@ export default function ConteudoCadastroEvento(props) {
                                                 name="palavraChave"
                                                 {...register('palavraChave')}
                                                 placeholder="Palavra Chave"
-                                                
                                             />
                                         </div>
                                     </div>
