@@ -39,7 +39,7 @@ export default function Eventos() {
 
             
             {eventos?.map((evento) => (  
-                    
+
                 <CardsEventos
                     idEvento={evento._id}
                     key={evento._id}

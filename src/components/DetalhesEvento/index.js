@@ -16,7 +16,7 @@ export default function DescricaoEvento(props) {
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
-              <div className="card-header shadow-sm ">
+              <div className="card-header shadow-sm p-1">
                 <div className="card-body">
                 <CardImage />
                   <h5 className="card-title text-center">{props.tituloEvento}</h5>

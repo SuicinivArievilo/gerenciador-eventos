@@ -5,6 +5,7 @@ import BotaoEvento from '../src/components/BotaoEvento';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
+import moment from 'moment';
 
 export default function eventosPassados() {
 
@@ -24,6 +25,7 @@ useEffect(() => {
     //eslint-disable-next-line
 }, []);
 
+moment.locale('pt-br');
 
 
 
@@ -40,7 +42,8 @@ useEffect(() => {
                 key={eventoPassado._id}
                 idEvento={eventoPassado._id}
                 tituloEvento={eventoPassado.nome}
-                dataEvento={eventoPassado.data}
+                
+                dataEvento={moment.utc(eventoPassado.data).format('DD/MM/YYYY HH:mm')}
                 localEvento={eventoPassado.local}
                 categEvento={eventoPassado.categoria}
                 hrefBtn={"detalhes/"+eventoPassado._id}
