@@ -5,6 +5,7 @@ import BotaoEvento from '../src/components/BotaoEvento';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
+import moment from 'moment';
 
 export default function eventosChegando() {
     const [listarEventosFuturos, setEventosFuturos] = useState([]);
@@ -34,7 +35,7 @@ export default function eventosChegando() {
               idEvento={eventoFuturo._id}
               key={eventoFuturo._id}
               tituloEvento={eventoFuturo.nome}
-              dataEvento={eventoFuturo.data}
+              dataEvento={moment.utc(eventoFuturo.data).format('DD/MM/YYYY HH:mm')}
               localEvento={eventoFuturo.local}
               categEvento={eventoFuturo.categoria}
               hrefBtn={"detalhes/"+eventoFuturo._id}

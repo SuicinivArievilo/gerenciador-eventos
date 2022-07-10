@@ -6,7 +6,7 @@ import CriarUsuario from '../src/components/ConteudoCadastro';
 export default function Registro() {
     return (
         <div>
-            <HeaderSetaELogo BtnBack="/" />
+            <HeaderSetaELogo hrefSeta="/"/>
             <CriarUsuario
                 classeDiv={styles.white}
                 titulo="Cadastro"

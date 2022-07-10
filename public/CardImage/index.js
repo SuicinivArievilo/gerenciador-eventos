@@ -41,7 +41,7 @@ export default function CardImage(props) {
         width={500} 
         height={244}
         />
-        ))};
+        ))}
 
         
     

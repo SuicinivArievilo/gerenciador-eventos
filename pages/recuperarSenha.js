@@ -5,7 +5,7 @@ import HeaderSetaELogo from '../src/components/HeaderSetaELogo'
 export default function RecuperarSenha() {
     return (
         <div>
-          <HeaderSetaELogo/>
+          <HeaderSetaELogo hrefSeta="/"/>
           <ConteudoRecuperarSenha classeDiv={styles.white} titulo="Recuperar Senha" hrefBtn='/recuperarSenha' tipoBtn='submit' nomeBtn='Recuperar' formBtn='btn btn-lg m-1 btn-primary' />
         </div>
 

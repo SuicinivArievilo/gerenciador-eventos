@@ -14,8 +14,8 @@ export default function HeaderSetaELogo(props) {
      
  
    
-      <SetaVoltar classSeta={Styles.mediaHeader} BtnBack={props.BtnBack}/>
-      <LogoCompleta classLogo={Styles.mediaHeader}/>
+      <SetaVoltar hrefSeta={props.hrefSeta} classSeta={Styles.mediaHeader}/>
+      <LogoCompleta classLogo={Styles.classLogo}/>
       
      
     </div>

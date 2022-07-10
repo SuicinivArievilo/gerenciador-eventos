@@ -5,6 +5,8 @@ import BotaoEvento from '../../src/components/BotaoEvento';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
+import moment from 'moment';
+import CardImage from '../../public/CardImage';
 
 export default function Detalhes() {
   const router = useRouter();
@@ -50,13 +52,15 @@ const [usuarioDocente, setUsuarioDocente] = useState([]);
   return typeof detalhes.nome !== 'undefined' ? (
     detalhes ? (
     <div>
-<HeaderSetaELogo BtnBack="/eventos" />
-      <DescricaoEvento
+     
 
+<HeaderSetaELogo hrefSeta="/eventos" />
+      <DescricaoEvento
+         idRouter={idRouter}
          key={detalhes?._id}
          tituloEvento={detalhes?.nome}
          docenteEvento={usuarioDocente?.nome}
-         dataEvento={detalhes?.data}
+         dataEvento={moment.utc(detalhes?.data).format('DD/MM/YYYY HH:mm')}
          localEvento={detalhes?.local}
          categEvento={detalhes?.categoria}
          descEvento={detalhes?.descricao}
@@ -80,8 +84,8 @@ const [usuarioDocente, setUsuarioDocente] = useState([]);
 
 ) : <div>
 
-<HeaderSetaELogo BtnBack="/eventos" />
-<h1>infelizmente não encontramos um evento para essa pagina</h1>
+<HeaderSetaELogo hrefSeta="/eventos" />
+<h4>infelizmente não encontramos um evento para essa pagina</h4>
 
 </div>
 

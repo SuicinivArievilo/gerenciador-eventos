@@ -29,7 +29,7 @@ export default function ConteudoCadastroEvento(props) {
         register,
         handleSubmit,
         formState: { errors },
-        reset
+        reset,
     } = useForm({
         resolver: yupResolver(schema)
     });
@@ -49,6 +49,8 @@ export default function ConteudoCadastroEvento(props) {
             'evento',
             response.data.id || '62c24f869c129a03e17841a0'
         );
+
+        
         formData.append('banner', true);
         formData.append('file', file);
         const config = {
@@ -110,7 +112,7 @@ export default function ConteudoCadastroEvento(props) {
                                         <div className="field name">
                                             <input
                                                 className="form-control"
-                                                type="date"
+                                                type="datetime-local"
                                                 name="data"
                                                 {...register('data')}
                                                 placeholder="Data"

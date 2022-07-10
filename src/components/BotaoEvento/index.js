@@ -18,7 +18,7 @@ const slideDown = keyframes({
   });
 
 const StyledContent = styled(DropdownMenuPrimitive.Content, {
-  minWidth: 100,
+  minWidth: 200,
   backgroundColor:  '#023160',
   borderRadius: 6,
   padding: 10,
@@ -31,13 +31,13 @@ const StyledContent = styled(DropdownMenuPrimitive.Content, {
 )
 const itemStyles = {
   all: 'unset',
-  fontSize: 13,
+  fontSize: 16,
   lineHeight: 1,
-  color: "white ",
+  color: "white",
   borderRadius: 3,
   display: 'flex',
   alignItems: 'center',
-  height: 27,
+  height: 50,
   position: 'relative',
   paddingLeft: 5,
   userSelect: 'none',
@@ -62,10 +62,10 @@ export const DropdownMenuItem = StyledItem;
 
 const IconButton = styled('button', {
   borderRadius: '100%',
-  height: 45,
-  width: 45,
+  height: 60,
+  width: 60,
   position: 'fixed',
-  left: '85%',
+  left: '82%',
   bottom: '2%',
   display: 'flex',
   alignItems: 'center',
@@ -82,7 +82,23 @@ export const BotaoEvento = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <IconButton>
-            <HamburgerMenuIcon/>
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="25.000000pt" height="25.000000pt" viewBox="0 0 50.000000 50.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M50 290 c-11 -11 -20 -29 -20 -40 0 -26 34 -60 60 -60 26 0 60 34 60
+60 0 26 -34 60 -60 60 -11 0 -29 -9 -40 -20z"/>
+<path d="M210 290 c-11 -11 -20 -29 -20 -40 0 -26 34 -60 60 -60 26 0 60 34
+60 60 0 11 -9 29 -20 40 -11 11 -29 20 -40 20 -11 0 -29 -9 -40 -20z"/>
+<path d="M370 290 c-11 -11 -20 -29 -20 -40 0 -11 9 -29 20 -40 11 -11 29 -20
+40 -20 26 0 60 34 60 60 0 11 -9 29 -20 40 -11 11 -29 20 -40 20 -11 0 -29 -9
+-40 -20z"/>
+</g>
+</svg>
+
+
           </IconButton>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -90,7 +106,7 @@ export const BotaoEvento = () => {
           <LinkNX hrefLink="/registroEvento" nomeLink="Novo Evento"/>
           </DropdownMenuItem>
           <DropdownMenuItem>
-          <LinkNX hrefLink="/registroEvento" nomeLink="Perfil"/>
+          <LinkNX hrefLink="/registroEvento" nomeLink="Sair"/>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

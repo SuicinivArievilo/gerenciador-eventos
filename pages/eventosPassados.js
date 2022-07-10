@@ -25,9 +25,6 @@ useEffect(() => {
     //eslint-disable-next-line
 }, []);
 
-moment.locale('pt-br');
-
-
 
     return (
         <div>

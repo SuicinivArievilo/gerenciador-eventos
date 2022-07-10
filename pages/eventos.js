@@ -4,6 +4,7 @@ import BotaoEvento from '../src/components/BotaoEvento';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
+import moment from 'moment';
 
 
 export default function Eventos() {
@@ -44,7 +45,7 @@ export default function Eventos() {
                     idEvento={evento._id}
                     key={evento._id}
                     tituloEvento={evento.nome}
-                    dataEvento={evento.data}
+                    dataEvento={moment.utc(evento.data).format('DD/MM/YYYY HH:mm')}
                     localEvento={evento.local}
                     categEvento={evento.categoria}
                     hrefBtn={"detalhes/"+evento._id}
