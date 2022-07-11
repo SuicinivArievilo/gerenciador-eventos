@@ -4,6 +4,7 @@ import  "@fontsource/work-sans";
 import  "@fontsource/comfortaa";
 import axios from  '../src/services/axios';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 
 
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
 
     const { asPath } = useRouter()
 
+ useEffect (() => {
 
     if(asPath !== "/" && asPath !== "/registro" && asPath !== "/login" && asPath !== "/recuperarSenha") {
       
@@ -26,14 +28,17 @@ function MyApp({ Component, pageProps }) {
 
  async function ValidandoToken(validacao){
     await validacao;
+   
     if(validacao == "Token válido!") { 
       
     } else {
       window.location.href ="/ "
     }
+  
   }
 }
-
+    //eslint-disable-next-line
+}, [])
 
   return(<Component {...pageProps} />) 
           

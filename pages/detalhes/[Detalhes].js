@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
 import moment from 'moment';
+import CardImage from '../../public/CardImage';
 
 export default function Detalhes() {
     const router = useRouter();

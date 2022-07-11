@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css';
+import ConteudoCadastro from '../src/components/ConteudoCadastro';
 import HeaderSetaELogo from '../src/components/HeaderSetaELogo';
 import CriarUsuario from '../src/components/ConteudoCadastro';
 
