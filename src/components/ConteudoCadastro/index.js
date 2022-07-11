@@ -29,8 +29,15 @@ export default function CriarUsuario(props) {
     });
 
     const cadastrarUsuario = (data) => {
-        axios.post('/usuario', data);
-        console.log(data);
+        try{
+            axios.post('/usuario', data);
+
+            window.location.href ="/login"
+        } catch(error){
+            console.log(error);
+        }
+        
+ 
         alert('sucesso');
         reset();
     };
