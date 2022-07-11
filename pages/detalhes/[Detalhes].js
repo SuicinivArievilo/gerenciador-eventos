@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
 import moment from 'moment';
-import CardImage from '../../public/CardImage';
+
 
 export default function Detalhes() {
     const router = useRouter();
@@ -49,9 +49,7 @@ export default function Detalhes() {
                     key={detalhes?._id}
                     tituloEvento={detalhes?.nome}
                     docenteEvento={usuarioDocente?.nome}
-                    dataEvento={moment
-                        .utc(detalhes?.data)
-                        .format('DD/MM/YYYY HH:mm')}
+                    dataEvento={moment.utc(detalhes?.data).format('DD/MM/YYYY HH:mm')}
                     localEvento={detalhes?.local}
                     categEvento={detalhes?.categoria}
                     descEvento={detalhes?.descricao}
@@ -68,7 +66,10 @@ export default function Detalhes() {
                     nomeBtn="Entrar"
                     formBtn="btn btn-primary btn-lg m-1 w-40"
                 />
+
             </div>
+
+    
         ) : (
             <div></div>
         )

@@ -1,10 +1,8 @@
 import React from 'react';
 import { styled, keyframes} from '@stitches/react';
-import {
-  HamburgerMenuIcon,
-} from '@radix-ui/react-icons';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import LinkNX from '../LinkNX';
+import LinkBotao from '../LinkBotao';
 
 
 const slideDown = keyframes({
@@ -68,6 +66,7 @@ const IconButton = styled('button', {
   left: '82%',
   bottom: '2%',
   display: 'flex',
+  zIndex: '99',
   alignItems: 'center',
   justifyContent: 'center',
   color: "white" ,
@@ -106,7 +105,7 @@ fill="#FFFFFF" stroke="none">
           <LinkNX hrefLink="/registroEvento" nomeLink="Novo Evento"/>
           </DropdownMenuItem>
           <DropdownMenuItem>
-          <LinkNX hrefLink="/registroEvento" nomeLink="Sair"/>
+          <LinkNX hrefLink="/" nomeLink="Sair"/>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

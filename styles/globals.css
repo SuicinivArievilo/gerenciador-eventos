@@ -27,3 +27,6 @@ a {
   background-color: #023160;
   border-color: #023160;
 }
+.swiper-pagination {
+ position: unset !important;
+}

@@ -1,5 +1,6 @@
 import CardImage from '../../../public/CardImage';
 import LinkBtn from '../LinkBotao';
+import style from '../../../styles/Home.module.css';
 
 export default function CardsEventos(props) {
     return (
@@ -68,7 +69,7 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                             </div>
                                             <div className="row col-12 justify-content-between">
                                                 <div className="row col-7 p-0">
-                                                    <p className="fs-6 text">
+                                                    <p className={style.localEvento}>
                                                         <svg
                                                             version="1.0"
                                                             xmlns="http://www.w3.org/2000/svg"

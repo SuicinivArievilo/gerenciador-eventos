@@ -3,6 +3,7 @@ import LinkBtn from '../LinkBotao';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
+import Carousel from '../CarouselPic';
 
 export default function DescricaoEvento(props) {
     const {
@@ -223,6 +224,12 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                             {props.descEvento}
                                         </p>
                                     </div>
+                                    
+
+                                    <p className="h6">Fotos: </p>
+                                    
+                                    <Carousel idEvento={props.idRouter}/>
+
                                     <form
                                         onSubmit={handleSubmit(cadastrarFoto)}
                                     >
@@ -247,8 +254,8 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                             formBtn={props.formBtn}
                                         />
                                     </form>
+                                    
 
-                                    <p className="h6">Fotos: </p>
                                 </div>
                             </div>
                         </div>
