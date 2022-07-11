@@ -7,19 +7,23 @@ import axios from '/src/services/axios';
 import moment from 'moment';
 
 
+
+
+
 export default function Eventos() {
+
     const [eventos, setEventos] = useState([]);
     useEffect(() => {
-        try {
-            axios
-                .get('/listarEventosHoje')
-                .then((response) => {
-                    setEventos(response.data);
-                });
-            console.log(eventos);
-        } catch (error) {
-            alert('falha ao buscar eventos');
-        }       
+            try {
+                axios
+                    .get('/listarEventosHoje')
+                    .then((response) => {
+                        setEventos(response.data);
+                    });
+            }catch(error) {
+                console.log('falha ao buscar eventos');
+                
+            }          
         //eslint-disable-next-line
     }, []);
 
@@ -30,7 +34,9 @@ export default function Eventos() {
 
 
     return (
+        
         <div>
+        
             <HeaderHoje
                 formPassados={styles.navCustomLink}
                 formHoje={styles.navActive}

@@ -10,7 +10,6 @@ export default function Login() {
                 classeDiv={styles.white}
                 titulo="Login"
                 hrefBtn="/eventos"
-                tipoBtn="submit"
                 nomeBtn="Entrar"
                 formBtn="btn btn-primary btn-lg m-1 w-50"
             />

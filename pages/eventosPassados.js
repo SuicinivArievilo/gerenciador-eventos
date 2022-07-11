@@ -17,7 +17,6 @@ useEffect(() => {
             .then((response) => {
               setEventosPassados(response.data);
             });
-        console.log(eventosPassados);
     } catch (error) {
         alert('falha ao buscar eventos');
     }

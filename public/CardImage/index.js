@@ -17,8 +17,6 @@ export default function CardImage(props) {
                 axios.get(`/fotosEventoBanner/${idEvento}`)
                 .then((response) => {
                     setURL(response.data);
-                    console.log("esse e o url"+urlBanner);
-                    console.log("esse e o id do Evento"+idEvento);
                 }
                 )
             } catch (error) {
@@ -41,9 +39,7 @@ export default function CardImage(props) {
         width={500} 
         height={244}
         />
-        ))}
-
-        
+        ))}  
     
     </div>
     )

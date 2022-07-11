@@ -13,8 +13,6 @@ export default function Detalhes() {
 
   const idRouter = router.query.Detalhes;
 
-  console.log('Esse é o ID Router ->:' + idRouter);
-
   const [detalhes, setDetalhes] = useState([]);
   useEffect(() => {
     if (idRouter != undefined) {
@@ -26,7 +24,6 @@ export default function Detalhes() {
 
         });
 
-      console.log(detalhes)
     }
  
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,7 +39,6 @@ const [usuarioDocente, setUsuarioDocente] = useState([]);
           setUsuarioDocente(response.data);
 
         });
-        console.log(usuarioDocente)
       }
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

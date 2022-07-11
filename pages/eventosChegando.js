@@ -14,7 +14,6 @@ export default function eventosChegando() {
             axios.get('/listarEventosFuturos').then((response) => {
                 setEventosFuturos(response.data);
             });
-            console.log(listarEventosFuturos);
         } catch (error) {
             alert('falha ao buscar eventos');
         }
