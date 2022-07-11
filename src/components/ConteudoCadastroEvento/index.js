@@ -29,7 +29,7 @@ export default function ConteudoCadastroEvento(props) {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
+        reset
     } = useForm({
         resolver: yupResolver(schema)
     });
@@ -50,7 +50,6 @@ export default function ConteudoCadastroEvento(props) {
             response.data.id || '62c24f869c129a03e17841a0'
         );
 
-        
         formData.append('banner', true);
         formData.append('file', file);
         const config = {
@@ -177,10 +176,10 @@ export default function ConteudoCadastroEvento(props) {
                                             multiple={false}
                                         />
                                         <label className="custom-file-label">
-                                            Escolher Banner
+                                            {file ? file.name : ''}
                                         </label>
                                     </div>
-                                    {file ? file.name : ''}
+
                                     <br />
                                     <LinkBtn
                                         nomeBtn={props.nomeBtn}
