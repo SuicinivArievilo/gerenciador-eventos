@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
     if(validacao == "Token válido!") { 
       
     } else {
-      window.location.href ="/ "
+      // window.location.href ="/ "
     }
   
   }

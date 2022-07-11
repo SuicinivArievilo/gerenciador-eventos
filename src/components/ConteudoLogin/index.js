@@ -3,7 +3,7 @@ import LinkNX from '../LinkNX'
 import {setCookie} from 'nookies'
 import axios from '../../services/axios';
 import '../../../styles/Home.module.css'
-import { useForm} from 'react-hook-form'
+import { set, useForm} from 'react-hook-form'
 
 
 
@@ -20,21 +20,23 @@ export default function ConteudoLogin(props) {
             email: data.email,
             senha: data.password,
         }).then((response) => {
-            console.log(response.data.token);
   
 
              if(response.data.token !== "" && response.data.token !== undefined){
-                 salvarCookie(response.data.token);
+                 salvarCookie(response.data.token, response.data.user._id); 
              }
                   
         })   
     }
     
-   async function salvarCookie(LoggedToken) {
+   async function salvarCookie(LoggedToken, LoggedUser) {
     await LoggedToken;
+
     setCookie(undefined, 'nextauth.token', LoggedToken, {
         maxAge: 60 * 60 * 1 // 1 hour
     });
+
+    localStorage.setItem('usertoken', LoggedUser);
 
     if(LoggedToken !== undefined && LoggedToken !== "") {
         window.location.href ="/eventos"
