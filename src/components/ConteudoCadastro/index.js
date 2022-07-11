@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import LinkBtn from '../LinkBotao';
 import axios from '../../services/axios';
-import { appendErrors, useForm } from 'react-hook-form';
+import {  useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 

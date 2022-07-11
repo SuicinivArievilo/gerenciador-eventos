@@ -1,15 +1,10 @@
-import Head from 'next/head'
 import LinkBtn from '../LinkBotao'
-
 import '../../../styles/Home.module.css'
 
 export default function ConteudoRecuperarSenha(props) {
 
     return (
         <div className={props.classeDiv}>
-            <Head>
-                {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> */}
-            </Head>
             <div className='container-md'>
                 <h1 className='text-blue display-1 pt-5 text-center'>{props.titulo}</h1>
                 <div className='py-5 text-center container'>

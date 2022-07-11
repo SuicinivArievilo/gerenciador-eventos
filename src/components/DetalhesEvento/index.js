@@ -2,7 +2,7 @@ import CardImage from '../../../public/CardImage';
 import LinkBtn from '../LinkBotao';
 import axios from 'axios';
 import React, { useState } from 'react';
-import { appendErrors, useForm } from 'react-hook-form';
+import {useForm } from 'react-hook-form';
 
 export default function DescricaoEvento(props) {
     const {
