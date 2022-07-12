@@ -1,13 +1,14 @@
-
-import Link from 'next/link'
+import {useRouter} from 'next/router'
+import style from '../../styles/Home.module.css'
 
 
 
 export default function SetaVoltar(props) {
+    const router = useRouter()
     return (
 
-        <Link href={props.hrefSeta}>
-            <a><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+        <button type="button" className={style.buttonBack} onClick={() => router.back()}>
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="50.000000pt" height="50.000000pt" viewBox="0 0 50.000000 50.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -17,10 +18,10 @@ fill="#FFFFFF" stroke="none">
 l-49 50 152 0 c95 0 152 4 152 10 0 6 -57 10 -152 10 l-152 0 47 48 c26 26 47
 51 47 55 0 17 -19 3 -75 -53z"/>
 </g>
-            </svg> </a>
+            </svg> 
 
                 
-        </Link>
+        </button>
         
     )
 }

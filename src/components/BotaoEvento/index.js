@@ -3,6 +3,7 @@ import { styled, keyframes} from '@stitches/react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import LinkNX from '../LinkNX';
 import LinkBotao from '../LinkBotao';
+import { useRouter } from 'next/router';
 
 
 const slideDown = keyframes({
@@ -75,7 +76,14 @@ const IconButton = styled('button', {
   
 });
 
+
+
+
+
 export const BotaoEvento = () => {
+
+  const router = useRouter();
+  const idRouter = router.query.Detalhes;
 
   return (
       <DropdownMenu>
@@ -106,6 +114,9 @@ fill="#FFFFFF" stroke="none">
           </DropdownMenuItem>
           <DropdownMenuItem>
           <LinkNX hrefLink="/" nomeLink="Sair"/>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+          <LinkNX hrefLink={"editar/"+idRouter} nomeLink="Editar evento"/>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

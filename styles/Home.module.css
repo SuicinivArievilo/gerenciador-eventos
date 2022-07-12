@@ -48,3 +48,9 @@
 .localEvento {
   white-space: nowrap;
 }
+
+.buttonBack,.buttonBack:focus,.buttonBack:hover{
+  background: inherit;
+  border: none;
+  outline: none;
+}
