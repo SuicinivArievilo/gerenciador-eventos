@@ -63,10 +63,8 @@ export default function ConteudoCadastroEvento(props) {
                 window.location.href = '/eventos';
             })
             .catch((error) => {
-                console.log(error);
+                alert('Erro ao cadastrar foto');
             });
-
-        alert('Success!');
         reset();
     };
     console.log(file);
