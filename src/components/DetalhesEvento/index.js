@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import Carousel from '../CarouselPic';
 import Checkin from '../Checkin';
+;
 
 export default function DescricaoEvento(props) {
     const {
@@ -272,6 +273,11 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                     <LinkNX
                                         hrefLink={'editar/' + props.idRouter}
                                         nomeLink="Editar evento"
+                                        formLink="btn btn-md m-1 btn-primary"
+                                    />
+                                     <LinkNX
+                                        hrefLink={'./relatorio/'+props.idRouter}
+                                        nomeLink="Relatorio"
                                         formLink="btn btn-md m-1 btn-primary"
                                     />
                                 </div>
