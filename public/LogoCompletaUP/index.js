@@ -5,12 +5,12 @@ export default function LogoCompleta(props) {
         <Link href="/">
             <a className={props.classLogo}>
                 <svg
-                    className="mr-2"
+                    className="mr-1"
                     version="1.0"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="120.000000pt"
-                    height="40.000000pt"
-                    viewBox="0 0 2281.000000 635.000000"
+                    width="160.000000pt"
+                    height="65.000000pt"
+                    viewBox="0 0 2290.000000 1000.000000"
                     preserveAspectRatio="xMidYMid meet"
                 >
                     <g

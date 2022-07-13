@@ -8,7 +8,7 @@ export default function ConteudoHomePage(props) {
 
     return (
         <div className={props.classeDiv}>
-            <div className="container col-md-4 mt-5">
+            <div className="container col-md-4 mt-4">
                 <div>⠀</div>
                 <h1 className="text-white display-4 text-center mt-3">
                     {props.titulo}
@@ -26,8 +26,8 @@ export default function ConteudoHomePage(props) {
                             tipoBtn={props.tipoBtn}
                         />
                     </div>
-                    <div className=" mt-3">
-                        <p className="text-light text-center">
+                    <div className=" mt-2">
+                        <p className="text-light text-center font-weight-light">
                             Ainda não possui conta?
                             <LinkNX
                                 hrefLink={props.hrefLink}
