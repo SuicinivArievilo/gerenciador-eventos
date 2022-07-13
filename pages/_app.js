@@ -10,7 +10,9 @@ import BotaoEvento from '/src/components/BotaoEvento';
 
 
 
+
 function MyApp({ Component, pageProps }) {
+   const [botao,setBotao] = useState(true);
 
     const { asPath } = useRouter()
  useEffect (() => {
@@ -52,17 +54,39 @@ const userTokenID = localStorage.getItem('usertoken')
       await docente;
       if(docente == false && asPath == "/registroEvento") {
          window.location.href ="/eventos "
+      }   
       }
-        
-      }
-   
-    //eslint-disable-next-line
-}, [])
 
-  return(<>
+   
+ 
+      if(asPath !== "/" && asPath !== "/registro" && asPath !== "/login" && asPath !== "/recuperarSenha" && asPath !== "/registroEvento"){
+         setBotao(true)
+      } else {
+         setBotao(false)
+      }
+      
+
+
+
+}, [botao,asPath])
+
+
+
+ return typeof botao !== true ? (
+   botao ?  (
+  <>
   <Component {...pageProps} />
-  <BotaoEvento /></>) 
-          
+  <BotaoEvento />
+  
+  </>
+  )  : (
+   <><Component {...pageProps}/></> 
+   )
+   ) : (
+   <>
+   <Component {...pageProps} />
+   </>
+   );      
 }
 
 export default MyApp
