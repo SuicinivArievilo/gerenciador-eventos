@@ -24,7 +24,6 @@ export default function Checkin(props){
                evento : props.idRouter,
             } ).then(response => { 
                 setCheckin(response.data);
-                console.log(checkin);
             })
             //eslint-disable-next-line
         }, [checkin]);
@@ -46,7 +45,6 @@ export default function Checkin(props){
                 
             );
             router.reload();
-            console.log(data);
         } else alert('Palavra chave incorreta');
     };
 
