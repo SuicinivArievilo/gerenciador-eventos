@@ -44,10 +44,14 @@ const userTokenID = localStorage.getItem('usertoken')
 
 
    if(userTokenID !== null) {
-      axios.get('/usuario/' + userTokenID)
-      .then((response) => {
-         ValidacaoDocete(response.data.docente);
-      })
+      axios
+          .get('/usuario/' + userTokenID)
+          .then((response) => {
+              ValidacaoDocete(response.data.docente);
+          })
+          .catch((error) => {
+              ValidacaoDocete(error);
+          });
    }
 
    async function ValidacaoDocete(docente){

@@ -36,18 +36,16 @@ export default function CriarUsuario(props) {
     });
 
     const cadastrarUsuario = (data) => {
-        try {
-            axios.post('/usuario', data).then(() => {
+        axios
+            .post('/usuario', data)
+            .then(() => {
                 window.location.href = '/login';
+            })
+            .catch((error) => {
+                alert('Email já cadastrado');
             });
-        } catch (error) {
-            console.log(error);
-        }
-
-        alert('sucesso');
-        reset();
     };
-
+        
     return (
         <div className="container col-md-4">
             <h1 className="display-4 mt-4 pt-5 text-center text-primary">
