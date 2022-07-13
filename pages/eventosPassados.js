@@ -59,7 +59,7 @@ const handleFiltro = (data) => {
             />
 
             <form onSubmit={handleSubmit(handleFiltro)}>
-                <div className="container text-center col-md-12">
+                <div className="container text-center col-md-5">
                     <h5 className="text-left text-primary mb-3">
                         Selecione um Período:
                     </h5>
@@ -74,7 +74,7 @@ const handleFiltro = (data) => {
                         className="mb-1 pt-2 pb-2 pl-2 pr-2  borda bg-light"
                     ></input>
                 </div>
-                <div className="container text-right mt-2">
+                <div className="container text-right mt-2 col-md-5">
                     <button
                         type="submit"
                         className="btn btn-primary btn-lg px-4 "
@@ -84,7 +84,7 @@ const handleFiltro = (data) => {
                 </div>
             </form>
 
-            <h5 className="container text-left text-primary mb-3">
+            <h5 className="container text-left text-primary mb-3  col-md-5">
                 Resultado:
             </h5>
 

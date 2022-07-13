@@ -19,7 +19,7 @@ export default function Editar() {
                 classeDiv={styles.white}
                 titulo="Editar evento"
                 tipoBtn="submit"
-                nomeBtn="Enviar"
+                nomeBtn="Salvar"
                 formBtn="btn btn-lg btn-primary p-2 pl-4 pr-4 mb-1"
             />
         </div>
