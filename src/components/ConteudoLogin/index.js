@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import LinkNX from '../LinkNX'
+
 import {setCookie} from 'nookies'
 import axios from '../../services/axios';
 import '../../../styles/Home.module.css'
@@ -31,7 +30,6 @@ export default function ConteudoLogin(props) {
     
    async function salvarCookie(LoggedToken, LoggedUser) {
     await LoggedToken;
-
     setCookie(undefined, 'nextauth.token', LoggedToken, {
         maxAge: 60 * 60 * 1 // 1 hour
     });
