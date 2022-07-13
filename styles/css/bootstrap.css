@@ -3682,6 +3682,7 @@ input[type="button"].btn-block {
 .custom-file-input:lang(pt-br) ~ .custom-file-label::after {
   content: "Procurar";
   color: #E8E8E8;
+  border-radius: 0rem 0.3rem 0.3rem 0rem;
 }
 
 .custom-file-label {
