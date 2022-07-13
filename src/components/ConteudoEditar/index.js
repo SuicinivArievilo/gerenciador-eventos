@@ -47,10 +47,11 @@ const idRouter = router.query.EditarEvento;
             axios.put(
             'http://18.231.37.81:3000/evento/'+idRouter,
             data
-        );
-        console.log(data);}
-        catch (error) {
-            console.log("Esse e o erro"+error);
+        ).then(response => {
+            console.log(response);
+            router.push(`/detalhes/${idRouter}`);
+        })}catch (error) {
+            console.log(error);
         }
     };
 
