@@ -20,7 +20,7 @@ export default function Registro() {
                 titulo="Cadastro"
                 tipoBtn="submit"
                 nomeBtn="Confirmar"
-                formBtn="col-8 btn btn-primary btn-lg mt-4"
+                formBtn="col-8 btn btn-primary btn-lg mt-5"
             />
         </div>
     );

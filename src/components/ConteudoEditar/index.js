@@ -86,12 +86,14 @@ useEffect(() => {
 
 return (
     <div className="container col-md-4">
-        <h1 className="display-4 mt-3 pt-3 text-center">{props.titulo}</h1>
+        <h2 className="display-4 mt-3 pt-3 text-center text-primary">
+            {props.titulo}
+        </h2>
         <div className="mt-4 container text-center">
             <form onSubmit={handleSubmit(AtualizarEvento)}>
                 <input
                     defaultValue={detalhes.nome}
-                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                    className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda rounded-top col-md-12 bg-light"
                     type="text"
                     name="name"
                     {...register('nome')}
@@ -106,7 +108,7 @@ return (
                     defaultValue={moment
                         .utc(detalhes?.data)
                         .format('YYYY-MM-DDTHH:mm')}
-                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                    className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                     type="datetime-local"
                     name="data"
                     {...register('data')}
@@ -119,7 +121,7 @@ return (
                 </div>
                 <textarea
                     defaultValue={detalhes?.descricao}
-                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                    className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                     id="descricao"
                     rows="3"
                     {...register('descricao')}
@@ -132,7 +134,7 @@ return (
                 </div>
                 <input
                     defaultValue={detalhes?.categoria}
-                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                    className="mb-0 mt-0 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                     type="text"
                     name="categoria"
                     {...register('categoria')}
@@ -145,7 +147,7 @@ return (
                 </div>
                 <input
                     defaultValue={detalhes?.local}
-                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                    className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                     type="text"
                     name="local"
                     {...register('local')}
@@ -159,7 +161,7 @@ return (
 
                 <input
                     defaultValue={detalhes?.palavraChave}
-                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                    className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda rounded-bottom col-md-12 bg-light"
                     type="text"
                     name="palavraChave"
                     {...register('palavraChave')}

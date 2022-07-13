@@ -50,11 +50,13 @@ export default function CriarUsuario(props) {
 
     return (
         <div className="container col-md-4">
-            <h1 className="display-4 mt-4 pt-5 text-center">{props.titulo}</h1>
+            <h1 className="display-4 mt-4 pt-5 text-center text-primary">
+                {props.titulo}
+            </h1>
             <div className="mt-4 container text-center">
                 <form onSubmit={handleSubmit(cadastrarUsuario)}>
                     <input
-                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda rounded-top col-md-12 bg-light"
                         type="text"
                         name="name"
                         {...register('nome')}
@@ -66,7 +68,7 @@ export default function CriarUsuario(props) {
                         </small>
                     </div>
                     <input
-                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                         type="text"
                         name="sobrenome"
                         {...register('sobrenome')}
@@ -78,7 +80,7 @@ export default function CriarUsuario(props) {
                         </small>
                     </div>
                     <input
-                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                         type="email"
                         name="email"
                         {...register('email')}
@@ -90,7 +92,7 @@ export default function CriarUsuario(props) {
                         </small>
                     </div>
                     <input
-                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda rounded-bottom col-md-12 bg-light"
                         type="password"
                         name="senha"
                         {...register('senha')}

@@ -224,7 +224,7 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                         <Carousel idEvento={props.idRouter} />
 
                         <form onSubmit={handleSubmit(cadastrarFoto)}>
-                            <div className="borda mt-2">
+                            <div className="borda rounded mt-2">
                                 <div className="custom-file">
                                     <input
                                         type="file"
@@ -245,12 +245,11 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                     tipoBtn={props.tipoBtn}
                                     formBtn={props.formBtn}
                                 />
-                         <LinkNX
-                        hrefLink={'editar/' + props.idRouter}
-                        nomeLink="Editar evento"
-                        formLink="btn btn-md m-1 btn-primary"
-                    />
-                                
+                                <LinkNX
+                                    hrefLink={'editar/' + props.idRouter}
+                                    nomeLink="Editar evento"
+                                    formLink="btn btn-md m-1 btn-primary"
+                                />
                             </div>
                         </form>
                     </div>

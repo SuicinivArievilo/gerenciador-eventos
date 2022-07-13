@@ -13,7 +13,7 @@ export default function Home() {
   return (
       <main>
           <div className="bg-primary">
-              <title>Gerenciador de Eventos - UP</title>
+              <title>Eventos - UP</title>
               <style jsx global>
                   {`
                       body {
@@ -28,13 +28,13 @@ export default function Home() {
               <LogoCompleta classLogo={styles.logo} />
               <ConteudoHomePage
                   titulo="Bem-vindo!"
-                  formBtn="col-6 btn btn-light btn-lg mb-2"
+                  formBtn="col-6 btn bg-secondary btn-lg btn-ligth mb-2 text-primary font-weight-bold "
                   hrefBtn="/login"
                   nomeBtn="Entrar"
                   tipoBtn="submit"
-                  formLink="text-light fs-6 px-3"
+                  formLink="text-light px-2 font-weight-normal"
                   hrefLink="/registro"
-                  nomeLink="Registrar-se"
+                  nomeLink="Criar conta"
                   texto="Consulte e gerencie seus eventos presenciais, híbridos e virtuais a partir de uma única plataforma"
               />
           </div>
