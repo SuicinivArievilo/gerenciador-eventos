@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
 import moment from 'moment';
 
-
 export default function Detalhes() {
     const router = useRouter();
 
@@ -56,6 +55,7 @@ export default function Detalhes() {
                     localEvento={detalhes?.local}
                     categEvento={detalhes?.categoria}
                     descEvento={detalhes?.descricao}
+                    palavraChave={detalhes?.palavraChave}
                     titulo="Enviar Foto"
                     tipoBtn="submit"
                     nomeBtn="Enviar Foto"
