@@ -8,14 +8,14 @@ export default function LogoCompleta(props) {
                     className="mr-1"
                     version="1.0"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="160.000000pt"
-                    height="65.000000pt"
-                    viewBox="0 0 2290.000000 1000.000000"
+                    width="120.000000pt"
+                    height="50.000000pt"
+                    viewBox="0 0 2290.000000 890.000000"
                     preserveAspectRatio="xMidYMid meet"
                 >
                     <g
                         transform="translate(0.000000,701.000000) scale(0.100000,-0.100000)"
-                        fill="#FFFFFF"
+                        fill="#E8E8E8"
                         stroke="none"
                     >
                         <path
