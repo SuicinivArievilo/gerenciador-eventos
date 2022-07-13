@@ -37,7 +37,7 @@ export default function DescricaoEvento(props) {
                 (data.usuario = userTokenID)
             );
             console.log(data);
-        } else console.log('Deu errado');
+        } else alert('Palavra chave incorreta');
     };
 
     const [file, setFile] = useState();
@@ -64,7 +64,6 @@ export default function DescricaoEvento(props) {
         const [f] = e.target.files;
         setFile(f);
     };
-
 
     const [userDocente, setUserDocente] = useState([]);
     useEffect(() => {
@@ -490,21 +489,22 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                             <Carousel idEvento={props.idRouter} />
                         </div>
                         <form onSubmit={handleSubmitCheckin(realizarCheckin)}>
-                            <div className="fields mb-3 custom-file">
+                            <div className="container col-md-12 custom-file">
                                 <input
-                                    className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                                    className="mb-0 pt-2 pb-2 pl-2 pr-2 borda rounded col-md-12 bg-light"
                                     type="text"
                                     name="palavraChave"
                                     {...register('palavraChave')}
                                     placeholder="Palavra Chave"
                                 />
                             </div>
-                            <br />
-                            <LinkBtn
-                                nomeBtn="Realizar Checkin"
-                                tipoBtn={props.tipoBtn}
-                                formBtn={props.formBtn}
-                            />
+                            <div className="text-center mt-3">
+                                <LinkBtn
+                                    nomeBtn="Realizar Checkin"
+                                    tipoBtn={props.tipoBtn}
+                                    formBtn={props.formBtn}
+                                />
+                            </div>
                         </form>
                     </div>
                 </div>
