@@ -23,7 +23,6 @@ export default function DescricaoEvento(props) {
         //Formando dados de foto
         let formData = new FormData();
         formData.append('evento', idEvento);
-
         formData.append('banner', false);
         formData.append('file', file);
         const config = {
@@ -32,14 +31,15 @@ export default function DescricaoEvento(props) {
         console.log(formData);
         //Realizando cadastro de foto
         await axios.post('http://18.231.37.81:3000/foto', formData, config);
-
-        alert('Success!');
+        //recarregar a pagina
+        window.location.reload();
         reset();
     };
     const handleChange = (e) => {
         const [f] = e.target.files;
         setFile(f);
     };
+
 
     const [userDocente, setUserDocente] = useState([]);
     useEffect(() => {
