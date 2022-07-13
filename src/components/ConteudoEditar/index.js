@@ -11,20 +11,19 @@ import moment from 'moment';
 import '../../../styles/Home.module.css';
 
 export default function EditarEvento(props) {
-    const schema = yup
-        .object({
-            nome: yup.string().required('Nome obrigatório'),
-            usuario: yup.string().required('Usuário obrigatório'),
-            data: yup.string().required('Data obrigatório'),
-            descricao: yup.string().required('Descrição obrigatório'),
-            categoria: yup.string().required('Categoria obrigatório'),
-            local: yup.string().required('Local obrigatório'),
-            palavraChave: yup
-                .string()
-                .required('Palavra Chave obrigatório')
-                .min(2, 'Mínimo de 2 caracteres')
-        })
-        .required();
+     const schema = yup
+         .object({
+             nome: yup.string().required('Nome obrigatório'),
+             data: yup.string().required('Data obrigatório'),
+             descricao: yup.string().required('Descrição obrigatório'),
+             categoria: yup.string().required('Categoria obrigatório'),
+             local: yup.string().required('Local obrigatório'),
+             palavraChave: yup
+                 .string()
+                 .required('Palavra Chave obrigatório')
+                 .min(2, 'Mínimo de 2 caracteres')
+         })
+         .required();
 
     const {
         register,
@@ -32,7 +31,7 @@ export default function EditarEvento(props) {
         formState: { errors },
         reset
     } = useForm({
-        resolver: yupResolver(schema)
+         resolver: yupResolver(schema)
     });
 
 
@@ -46,7 +45,7 @@ const idRouter = router.query.EditarEvento;
         const response = await data
          try { 
             axios.put(
-            'http://18.231.37.81:3000/evento'+idRouter,
+            'http://18.231.37.81:3000/evento/'+idRouter,
             data
         );
         console.log(data);}
@@ -63,27 +62,35 @@ console.log('Esse é o ID Router ->:' + idRouter);
 const [detalhes, setDetalhes] = useState([]);
 useEffect(() => {
     if (idRouter != undefined) {
-        axios.get(`http://18.231.37.81:3000/evento/${idRouter}`).then((response) => {
+        axios.get(`http://18.231.37.81:3000/evento/${idRouter}`)
+        .then((response) => {
             setDetalhes(response.data);
+            let defaultValues = {};
+            defaultValues.nome = detalhes?.nome;
+            defaultValues.data = moment.utc(detalhes?.data).format('YYYY-MM-DDTHH:mm');
+            defaultValues.descricao = detalhes?.descricao;
+            defaultValues.categoria = detalhes?.categoria;
+            defaultValues.local = detalhes?.local;
+            defaultValues.palavraChave = detalhes?.palavraChave;
+            reset({ ...defaultValues });
+
         });
+
+     
+      
 
         console.log(detalhes);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [idRouter]);
+}, [idRouter,reset]);
 
 
-
-
-
-
-
-
-
-  
 
     return (
+
+            
+
         <div className={props.classeDiv}>
             <div className="container-md">
                 <h1 className="text-blue display-4 pt-5 text-center">
@@ -98,7 +105,7 @@ useEffect(() => {
                                     <div className="fields mb-3 borda">
                                         <div className="field name">
                                             <input
-                                                defaultValue={detalhes?.nome}
+                                                defaultValue={detalhes.nome}
                                                 className="form-control"
                                                 type="text"
                                                 name="name"
