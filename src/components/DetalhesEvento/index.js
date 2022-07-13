@@ -5,6 +5,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import Carousel from '../CarouselPic';
+import Checkin from '../Checkin';
 
 export default function DescricaoEvento(props) {
     const {
@@ -18,27 +19,6 @@ export default function DescricaoEvento(props) {
         handleSubmit: handleSubmitCheckin,
         formState: { errors2 }
     } = useForm({});
-
-    const realizarCheckin = async (data) => {
-        await data;
-
-        const idEvento = props.idRouter;
-        const userTokenID = localStorage.getItem('usertoken');
-        const palavraChaveEvento = props.palavraChave;
-
-        console.log(palavraChaveEvento);
-        console.log(data.palavraChave);
-
-        if (palavraChaveEvento == data.palavraChave) {
-            axios.post(
-                'http://18.231.37.81:3000/checkin',
-                data,
-                (data.evento = idEvento),
-                (data.usuario = userTokenID)
-            );
-            console.log(data);
-        } else alert('Palavra chave incorreta');
-    };
 
     const [file, setFile] = useState();
 
@@ -488,24 +468,8 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
 
                             <Carousel idEvento={props.idRouter} />
                         </div>
-                        <form onSubmit={handleSubmitCheckin(realizarCheckin)}>
-                            <div className="container col-md-12 custom-file">
-                                <input
-                                    className="mb-0 pt-2 pb-2 pl-2 pr-2 borda rounded col-md-12 bg-light"
-                                    type="text"
-                                    name="palavraChave"
-                                    {...register('palavraChave')}
-                                    placeholder="Palavra Chave"
-                                />
-                            </div>
-                            <div className="text-center mt-3">
-                                <LinkBtn
-                                    nomeBtn="Realizar Checkin"
-                                    tipoBtn={props.tipoBtn}
-                                    formBtn={props.formBtn}
-                                />
-                            </div>
-                        </form>
+                        <Checkin palavraChave={props.palavraChave} idRouter={props.idRouter} 
+                        tipoBtn={props.tipoBtn} formBtn={props.formBtn} dataEventoID={props.dataEventoID}/>
                     </div>
                 </div>
                 <div>⠀</div>

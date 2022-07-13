@@ -56,10 +56,13 @@ export default function Detalhes() {
                     categEvento={detalhes?.categoria}
                     descEvento={detalhes?.descricao}
                     palavraChave={detalhes?.palavraChave}
+                    dataEventoID={moment(detalhes?.data)
+                        .format('DD/MM/YYYY')}
                     titulo="Enviar Foto"
                     tipoBtn="submit"
                     nomeBtn="Enviar Foto"
                     formBtn="btn btn-md m-1 btn-primary"
+                    
                 />
             </div>
         ) : (
