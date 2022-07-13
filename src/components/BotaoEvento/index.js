@@ -69,12 +69,15 @@ const IconButton = styled('button', {
 });
 
 export const BotaoEvento = () => {
+
+    const [nome, setNome] = useState([]);
     const [userDocente, setUserDocente] = useState([]);
     useEffect(() => {
         const userTokenID = localStorage.getItem('usertoken');
         if (userTokenID !== null) {
             axios.get('/usuario/' + userTokenID).then((response) => {
                 setUserDocente(response.data.docente);
+                setNome(response.data.nome);
             });
         }
 
@@ -143,7 +146,7 @@ fill="#FFFFFF" stroke="none">
 0 -50 -4 -50 -10z"/>
 </g>
 </svg>
-                        Usuario
+                        {nome}
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <LinkNX
@@ -217,7 +220,7 @@ fill="#FFFFFF" stroke="none">
                                 />
                             </g>
                         </svg>
-                        Usuario
+                        {nome}
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <LinkNX hrefLink="/" nomeLink="Sair" />
