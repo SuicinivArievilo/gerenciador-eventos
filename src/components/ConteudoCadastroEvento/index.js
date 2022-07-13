@@ -21,7 +21,7 @@ export default function ConteudoCadastroEvento(props) {
             palavraChave: yup
                 .string()
                 .required('Palavra Chave obrigatório')
-                .min(2, 'Mínimo de 2 caracteres')
+                .min(2, 'Mínimo de 2 caracteres') 
         })
         .required();
 
