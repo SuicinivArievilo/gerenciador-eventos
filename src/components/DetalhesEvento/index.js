@@ -42,13 +42,13 @@ export default function DescricaoEvento(props) {
     };
     return (
         <>
-            <div className="col-md-12 bg-white mt-3">
-                <div className="container col-md-5 mt-3 mb-4 shadow-sm bg-secondary py-2">
+            <div className="mx-2 bg-white mt-3 ">
+                <div className="container col-md-5 mt-3 mb-4 bg-secondary shadow-sm py-2 px-2 rounded">
                     <CardImage idEvento={props.idRouter} />
                     <div>
-                        <h2 className="mt-2 text-center font-weight-normal">
+                        <h3 className="mt-2 text-center font-weight-normal">
                             {props.tituloEvento}
-                        </h2>
+                        </h3>
                     </div>
                     <div className="row">
                         <div className="col-md">
@@ -63,7 +63,7 @@ export default function DescricaoEvento(props) {
                                 >
                                     <g
                                         transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                        fill="#000000"
+                                        fill="#656565"
                                         stroke="none"
                                     >
                                         <path
@@ -91,7 +91,7 @@ m63 -32 c16 -38 24 -38 40 0 12 30 14 30 86 30 43 0 74 -4 74 -10 0 -6 -30
                                         />
                                     </g>
                                 </svg>
-                                <span className="pl-2">
+                                <span className="pl-2 text-dark">
                                     {props.docenteEvento}
                                 </span>
                             </div>
@@ -106,7 +106,7 @@ m63 -32 c16 -38 24 -38 40 0 12 30 14 30 86 30 43 0 74 -4 74 -10 0 -6 -30
                                 >
                                     <g
                                         transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                        fill="#000000"
+                                        fill="#656565"
                                         stroke="none"
                                     >
                                         <path
@@ -129,7 +129,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                         />
                                     </g>
                                 </svg>
-                                <span className="pl-2">
+                                <span className="pl-2 text-dark">
                                     {props.localEvento}
                                 </span>
                             </div>
@@ -146,7 +146,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                 >
                                     <g
                                         transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                        fill="#000000"
+                                        fill="#656565"
                                         stroke="none"
                                     >
                                         <path
@@ -161,7 +161,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                         />
                                     </g>
                                 </svg>
-                                <span className="pl-2">
+                                <span className="pl-2 text-dark">
                                     {props.categEvento}
                                 </span>
                             </div>
@@ -176,7 +176,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                 >
                                     <g
                                         transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                        fill="#000000"
+                                        fill="#656565"
                                         stroke="none"
                                     >
                                         <path
@@ -209,13 +209,17 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                         />
                                     </g>
                                 </svg>
-                                <span className="pl-2">{props.dataEvento}</span>
+                                <span className="pl-2 text-dark">
+                                    {props.dataEvento}
+                                </span>
                             </div>
                         </div>
                     </div>
                     <div className="mt-4">
                         <p className="h5">Descrição do evento: </p>
-                        <p className="text-muted">{props.descEvento}</p>
+                        <p className="text-muted text-dark">
+                            {props.descEvento}
+                        </p>
                     </div>
 
                     <div className="mt-4">

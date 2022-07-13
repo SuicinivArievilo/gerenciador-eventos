@@ -25,7 +25,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
-  --dark: #343a40;
+  --dark: #656565;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -2331,7 +2331,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #E8E8E8;
   background-color: #023160;
   border-color: #023160;
 }
@@ -3681,6 +3681,7 @@ input[type="button"].btn-block {
 
 .custom-file-input:lang(pt-br) ~ .custom-file-label::after {
   content: "Procurar";
+  color: #E8E8E8;
 }
 
 .custom-file-label {
@@ -8925,7 +8926,7 @@ a.text-light:hover, a.text-light:focus {
 }
 
 .text-dark {
-  color: #343a40 !important;
+  color: #656565 !important;
 }
 
 a.text-dark:hover, a.text-dark:focus {

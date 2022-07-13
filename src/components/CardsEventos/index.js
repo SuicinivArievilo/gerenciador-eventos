@@ -4,8 +4,8 @@ import style from '../../../styles/Home.module.css';
 
 export default function CardsEventos(props) {
     return (
-        <div className="col-md-12 bg-white">
-            <div className="container col-md-5 mt-3 mb-4 shadow-sm bg-secondary py-2">
+        <div className=" px-2 bg-white">
+            <div className="container col-md-5 mt-3 mb-4 bg-secondary shadow-sm py-2 px-2 rounded">
                 <div className="text-center img-fluid pt-1">
                     <CardImage idEvento={props.idEvento} />
                 </div>
@@ -27,7 +27,7 @@ export default function CardsEventos(props) {
                         >
                             <g
                                 transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                fill="#000000"
+                                fill="#656565"
                                 stroke="none"
                             >
                                 <path
@@ -60,7 +60,9 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                 />
                             </g>
                         </svg>
-                        <span className="pl-2">{props.dataEvento}</span>
+                        <span className="pl-2 text-dark">
+                            {props.dataEvento}
+                        </span>
                     </div>
 
                     <div className="pt-2 pb-2">
@@ -75,7 +77,7 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                             >
                                 <g
                                     transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                    fill="#000000"
+                                    fill="#656565"
                                     stroke="none"
                                 >
                                     <path
@@ -98,7 +100,9 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                     />
                                 </g>
                             </svg>
-                            <span className="pl-2">{props.localEvento}</span>
+                            <span className="pl-2 text-dark">
+                                {props.localEvento}
+                            </span>
                         </div>
                         <div className="pt-2 d-flex justify-content-between mt-2">
                             <div>
@@ -112,7 +116,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                 >
                                     <g
                                         transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                                        fill="#000000"
+                                        fill="#656565"
                                         stroke="none"
                                     >
                                         <path
@@ -128,7 +132,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                     </g>
                                 </svg>
 
-                                <span className="pl-2">
+                                <span className="pl-2 text-dark">
                                     {props.categEvento}
                                 </span>
                             </div>
@@ -137,7 +141,9 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                     hrefBtn={props.hrefBtn}
                                     nomeBtn={props.nomeBtn}
                                     tipoBtn={props.tipoBtn}
-                                    formBtn={"btn btn-md btn-primary p-2 pl-4 pr-4 mb-1"}
+                                    formBtn={
+                                        'btn btn-md btn-primary p-2 pl-4 pr-4 mb-1'
+                                    }
                                 />
                             </div>
                         </div>
