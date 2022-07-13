@@ -1,9 +1,11 @@
 import CardImage from '../../../public/CardImage';
 import LinkBtn from '../LinkBotao';
+import LinkNX from '../LinkNX';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { appendErrors, useForm } from 'react-hook-form';
 import Carousel from '../CarouselPic';
+
 
 
 export default function DescricaoEvento(props) {
@@ -237,12 +239,18 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                     </label>
                                 </div>
                             </div>
-                            <div className="mb-1 mt-1">
+                            <div className=" mb-1 mt-3 text-center ">
                                 <LinkBtn
                                     nomeBtn={props.nomeBtn}
                                     tipoBtn={props.tipoBtn}
                                     formBtn={props.formBtn}
                                 />
+                         <LinkNX
+                        hrefLink={'editar/' + props.idRouter}
+                        nomeLink="Editar evento"
+                        formLink="btn btn-md m-1 btn-primary"
+                    />
+                                
                             </div>
                         </form>
                     </div>

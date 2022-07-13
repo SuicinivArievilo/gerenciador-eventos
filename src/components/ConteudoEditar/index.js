@@ -86,7 +86,7 @@ useEffect(() => {
 
 return (
     <div className="container col-md-4">
-        <h1 className="display-4 mt-4 pt-5 text-center">{props.titulo}</h1>
+        <h1 className="display-4 mt-3 pt-3 text-center">{props.titulo}</h1>
         <div className="mt-4 container text-center">
             <form onSubmit={handleSubmit(AtualizarEvento)}>
                 <input

@@ -119,12 +119,6 @@ export const BotaoEvento = () => {
                     <LinkNX hrefLink="/registroEvento" nomeLink="Novo Evento" />
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <LinkNX
-                        hrefLink={'editar/' + idRouter}
-                        nomeLink="Editar evento"
-                    />
-                </DropdownMenuItem>
-                <DropdownMenuItem>
                     <LinkNX hrefLink="/" nomeLink="Sair" />
                 </DropdownMenuItem>
             </DropdownMenuContent>
