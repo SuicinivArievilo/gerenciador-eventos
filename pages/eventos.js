@@ -6,37 +6,22 @@ import { useEffect, useState } from 'react';
 import axios from '/src/services/axios';
 import moment from 'moment';
 
-
-
-
-
 export default function Eventos() {
-
     const [eventos, setEventos] = useState([]);
     useEffect(() => {
-            try {
-                axios
-                    .get('/listarEventosHoje')
-                    .then((response) => {
-                        setEventos(response.data);
-                    });
-            }catch(error) {
-                console.log('falha ao buscar eventos');
-                
-            }          
+        try {
+            axios.get('/listarEventosHoje').then((response) => {
+                setEventos(response.data);
+            });
+        } catch (error) {
+            console.log('falha ao buscar eventos');
+        }
         //eslint-disable-next-line
     }, []);
 
- 
-   
-       
-
-
-
     return (
-        
         <div>
-        
+            <title>Eventos - Hoje</title>
             <HeaderHoje
                 formPassados={styles.navCustomLink}
                 formHoje={styles.navActive}
@@ -44,20 +29,20 @@ export default function Eventos() {
                 headerBg={styles.navBg}
             />
 
-            
-            {eventos?.map((evento) => (  
-
+            {eventos?.map((evento) => (
                 <CardsEventos
                     idEvento={evento._id}
                     key={evento._id}
                     tituloEvento={evento.nome}
-                    dataEvento={moment.utc(evento.data).format('DD/MM/YYYY HH:mm')}
+                    dataEvento={moment
+                        .utc(evento.data)
+                        .format('DD/MM/YYYY HH:mm')}
                     localEvento={evento.local}
                     categEvento={evento.categoria}
-                    hrefBtn={"detalhes/"+evento._id}
+                    hrefBtn={'detalhes/' + evento._id}
                     nomeBtn="Visualizar"
                     tipoBtn="submit"
-                    formBtn="btn btn-lg m-1 btn-primary py-1"
+                    formBtn="btn btn-lg btn-primary p-2 pl-4 pr-4 mb-1"
                 />
             ))}
 
@@ -66,7 +51,7 @@ export default function Eventos() {
                 hrefBtn="/eventos"
                 tipoBtn="submit"
                 nomeBtn="Entrar"
-                formBtn="btn btn-primary btn-lg m-1 w-50 "
+                formBtn=""
             />
         </div>
     );

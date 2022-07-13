@@ -23,6 +23,7 @@ export default function eventosChegando() {
 
     return (
         <div>
+            <title>Eventos - Chegando</title>
             <HeaderHoje
                 formPassados={styles.navCustomLink}
                 formHoje={styles.navCustomLink}
@@ -30,26 +31,28 @@ export default function eventosChegando() {
                 headerBg={styles.navBg}
             />
             {listarEventosFuturos?.map((eventoFuturo) => (
-              <CardsEventos
-              idEvento={eventoFuturo._id}
-              key={eventoFuturo._id}
-              tituloEvento={eventoFuturo.nome}
-              dataEvento={moment.utc(eventoFuturo.data).format('DD/MM/YYYY HH:mm')}
-              localEvento={eventoFuturo.local}
-              categEvento={eventoFuturo.categoria}
-              hrefBtn={"detalhes/"+eventoFuturo._id}
-              tipoBtn="submit"
-              nomeBtn="Visualizar"
-              formBtn="btn btn-primary btn-lg m-1 w-40"
-          />
-              ))}
-            
+                <CardsEventos
+                    idEvento={eventoFuturo._id}
+                    key={eventoFuturo._id}
+                    tituloEvento={eventoFuturo.nome}
+                    dataEvento={moment
+                        .utc(eventoFuturo.data)
+                        .format('DD/MM/YYYY HH:mm')}
+                    localEvento={eventoFuturo.local}
+                    categEvento={eventoFuturo.categoria}
+                    hrefBtn={'detalhes/' + eventoFuturo._id}
+                    tipoBtn="submit"
+                    nomeBtn="Visualizar"
+                    formBtn="btn btn-primary btn-lg m-1 w-40"
+                />
+            ))}
+
             <BotaoEvento
                 titulo="#"
                 hrefBtn="/eventos"
                 tipoBtn="submit"
                 nomeBtn="Entrar"
-                formBtn="btn btn-primary btn-lg m-1 w-50"
+                formBtn=""
             />
         </div>
     );

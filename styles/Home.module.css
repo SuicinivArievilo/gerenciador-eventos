@@ -39,10 +39,11 @@
 }
 .navBg{
   background-color: #023160;
+  color: #FFFFFF;
 }
 
 .roundedBanner img{
-  border-radius: 1rem;
+  border-radius: 0.3rem;
 }
 
 .localEvento {
@@ -53,6 +54,7 @@
   background: inherit;
   border: none;
   outline: none;
+<<<<<<< Updated upstream
 }
 
 .hidden{
@@ -60,3 +62,6 @@
   width: 0;
   height: 0;
 }
+=======
+}
+>>>>>>> Stashed changes

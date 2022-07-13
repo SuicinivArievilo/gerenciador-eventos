@@ -5,6 +5,7 @@ import HeaderSetaELogo from '../src/components/HeaderSetaELogo';
 export default function RegistroEvento() {
     return (
         <div>
+            <title>Novo Evento</title>
             <HeaderSetaELogo hrefSeta="/eventos" />
             <ConteudoCadastroEvento
                 classeDiv={styles.white}

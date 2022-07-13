@@ -28,21 +28,19 @@ export default function CardImage(props) {
     }, []);
 
 
-    return ( 
+    return (
         <div className={style.roundedBanner}>
-
-        {urlBanner.map((url) => (
-        
-        <Image src={url.url}
-        alt={"Banner"}
-        key={url._id}
-        width={500} 
-        height={244}
-        />
-        ))}  
-    
-    </div>
-    )
+            {urlBanner.map((url) => (
+                <Image
+                    src={url.url}
+                    alt={'Banner'}
+                    key={url._id}
+                    width={1920}
+                    height={1080}
+                />
+            ))}
+        </div>
+    );
 }
 
 

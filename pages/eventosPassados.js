@@ -27,6 +27,7 @@ useEffect(() => {
 
     return (
         <div>
+            <title>Eventos - Passado</title>
             <HeaderHoje
                 formPassados={styles.navActive}
                 formHoje={styles.navCustomLink}
@@ -34,27 +35,28 @@ useEffect(() => {
                 headerBg={styles.navBg}
             />
             {eventosPassados?.map((eventoPassado) => (
-            <CardsEventos
-                key={eventoPassado._id}
-                idEvento={eventoPassado._id}
-                tituloEvento={eventoPassado.nome}
-                
-                dataEvento={moment.utc(eventoPassado.data).format('DD/MM/YYYY HH:mm')}
-                localEvento={eventoPassado.local}
-                categEvento={eventoPassado.categoria}
-                hrefBtn={"detalhes/"+eventoPassado._id}
-                tipoBtn="submit"
-                nomeBtn="Visualizar"
-                formBtn="btn btn-primary btn-lg m-1 w-40"
+                <CardsEventos
+                    key={eventoPassado._id}
+                    idEvento={eventoPassado._id}
+                    tituloEvento={eventoPassado.nome}
+                    dataEvento={moment
+                        .utc(eventoPassado.data)
+                        .format('DD/MM/YYYY HH:mm')}
+                    localEvento={eventoPassado.local}
+                    categEvento={eventoPassado.categoria}
+                    hrefBtn={'detalhes/' + eventoPassado._id}
+                    tipoBtn="submit"
+                    nomeBtn="Visualizar"
+                    formBtn="btn btn-primary btn-lg m-1 w-40"
                 />
             ))}
-           
+
             <BotaoEvento
                 titulo="#"
                 hrefBtn="/eventos"
                 tipoBtn="submit"
                 nomeBtn="Entrar"
-                formBtn="btn btn-primary btn-lg m-1 w-50"
+                formBtn=""
             />
         </div>
     );

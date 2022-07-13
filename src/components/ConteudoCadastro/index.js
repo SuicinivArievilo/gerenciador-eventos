@@ -43,78 +43,66 @@ export default function CriarUsuario(props) {
     };
 
     return (
-        <div className={props.classeDiv}>
-            <Head>
-                {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> */}
-            </Head>
-            <div className="container-md">
-                <h1 className="text-blue display-1 pt-5 text-center">
-                    {props.titulo}
-                </h1>
-                <div className="py-5 text-center container">
-                    <div className="contact-content">
-                        <div className="column right">
-                            <div className="album py-5 container">
-                                <form onSubmit={handleSubmit(cadastrarUsuario)}>
-                                <span>{errors.nome?.message}</span>
-                                    <div className="fields mb-3 borda">
-                                        <div className="field name">
-                                            <input
-                                                className="form-control"
-                                                type="text"
-                                                name="name"
-                                                {...register('nome')}
-                                                placeholder="Nome"
-                                            />
-                                        </div>
-                                    </div>
-                                    <span>{errors.sobrenome?.message}</span>
-                                    <div className="fields mb-3 borda">
-                                        <div className="field name">
-                                            <input
-                                                className="form-control"
-                                                type="text"
-                                                name="sobrenome" 
-                                                {...register('sobrenome')}
-                                                placeholder="Sobrenome"
-                                            />
-                                            
-                                        </div>
-                                    </div>
-                                    <span>{errors.email?.message}</span>
-                                    <div className="fields mb-3 borda">
-                                        <div className="field name">
-                                            <input
-                                                className="form-control"
-                                                type="email"
-                                                name="email"
-                                                {...register('email')}
-                                                placeholder="E-mail"
-                                            />
-                                        </div>
-                                    </div>
-                                    <span>{errors.senha?.message}</span> 
-                                    <div className="fields mb-3 borda">
-                                        <div className="field name">
-                                            <input
-                                                className="form-control"
-                                                type="password"
-                                                name="senha"
-                                                {...register('senha')}
-                                                placeholder="Senha"
-                                            />
-                                        </div>
-                                    </div>
-                                    <LinkBtn
-                                        nomeBtn={props.nomeBtn}
-                                        tipoBtn={props.tipoBtn}
-                                        formBtn={props.formBtn}
-                                    />
-                                </form>
-                            </div>
-                        </div>
+        <div className="container col-md-4">
+            <h1 className="display-4 mt-4 pt-5 text-center">{props.titulo}</h1>
+            <div className="mt-4 container text-center">
+                <form onSubmit={handleSubmit(cadastrarUsuario)}>
+                    <input
+                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        type="text"
+                        name="name"
+                        {...register('nome')}
+                        placeholder="Nome"
+                    />
+                    <div>
+                        <small className="text-danger">
+                            {errors.nome?.message}
+                        </small>
                     </div>
-                </div>
+                    <input
+                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        type="text"
+                        name="sobrenome"
+                        {...register('sobrenome')}
+                        placeholder="Sobrenome"
+                    />
+                    <div>
+                        <small className="text-danger">
+                            {errors.sobrenome?.message}
+                        </small>
+                    </div>
+                    <input
+                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        type="email"
+                        name="email"
+                        {...register('email')}
+                        placeholder="E-mail"
+                    />
+                    <div>
+                        <small className="text-danger">
+                            {errors.email?.message}
+                        </small>
+                    </div>
+                    <input
+                        className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        type="password"
+                        name="senha"
+                        {...register('senha')}
+                        placeholder="Senha"
+                    />
+                    <div>
+                        <small className="text-danger">
+                            {errors.senha?.message}
+                        </small>
+                    </div>
+                    <div>
+                        <LinkBtn
+                            nomeBtn={props.nomeBtn}
+                            tipoBtn={props.tipoBtn}
+                            formBtn={props.formBtn}
+                        />
+                    </div>
+                </form>
             </div>
         </div>
     );
