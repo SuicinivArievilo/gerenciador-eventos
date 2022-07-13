@@ -80,133 +80,129 @@ export default function ConteudoCadastroEvento(props) {
 
         return (
             <div className={props.classeDiv}>
-                <Head>
-                    {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> */}
-                </Head>
-                <div className="container-md">
-                    <h1 className="text-blue display-4 pt-5 text-center">
+                <div className="container col-md-4">
+                    <h1 className="display-4 mt-4 pt-3 text-center">
                         {props.titulo}
                     </h1>
-                    <div className="text-center container">
-                        <div className="contact-content">
-                            <div className="column right">
-                                <div className="album py-5 container">
-                                    <form
-                                        onSubmit={handleSubmit(cadastrarEvento)}
-                                    >
-                                        <span>{errors.nome?.message}</span>
-                                        <div className="fields mb-3 borda">
-                                            <div className="field name">
-                                                <input
-                                                    className="form-control"
-                                                    type="text"
-                                                    name="name"
-                                                    {...register('nome')}
-                                                    placeholder="Nome"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className={styles.hidden}>
-                                            <div className="field name">
-                                                <input
-                                                    defaultValue={userTokenID}
-                                                    className="form-control"
-                                                    type="text"
-                                                    name="id"
-                                                    {...register('usuario')}
-                                                    placeholder="id"
-                                                />
-                                            </div>
-                                        </div>
-                                        <span>{errors.data?.message}</span>
-                                        <div className="fields mb-3 borda">
-                                            <div className="field name">
-                                                <input
-                                                    className="form-control"
-                                                    type="datetime-local"
-                                                    name="data"
-                                                    {...register('data')}
-                                                    placeholder="Data"
-                                                />
-                                            </div>
-                                        </div>
-                                        <span>{errors.descricao?.message}</span>
-                                        <div className="fields mb-3 borda">
-                                            <div className="field name">
-                                                <textarea
-                                                    className="form-control"
-                                                    id="descricao"
-                                                    rows="3"
-                                                    {...register('descricao')}
-                                                    placeholder="Descrição"
-                                                ></textarea>
-                                            </div>
-                                        </div>
-                                        <span>{errors.categoria?.message}</span>
-                                        <div className="fields mb-3 borda">
-                                            <div className="field name">
-                                                <input
-                                                    className="form-control"
-                                                    type="text"
-                                                    name="categoria"
-                                                    {...register('categoria')}
-                                                    placeholder="Categoria"
-                                                />
-                                            </div>
-                                        </div>
-                                        <span>{errors.local?.message}</span>
-                                        <div className="fields mb-3 borda">
-                                            <div className="field name">
-                                                <input
-                                                    className="form-control"
-                                                    type="text"
-                                                    name="local"
-                                                    {...register('local')}
-                                                    placeholder="Local"
-                                                />
-                                            </div>
-                                        </div>
-                                        <span>
-                                            {errors.palavraChave?.message}
-                                        </span>
-                                        <div className="fields mb-3 borda">
-                                            <div className="field name">
-                                                <input
-                                                    className="form-control"
-                                                    type="text"
-                                                    name="palavraChave"
-                                                    {...register(
-                                                        'palavraChave'
-                                                    )}
-                                                    placeholder="Palavra Chave"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="fields mb-3 custom-file">
-                                            <input
-                                                type="file"
-                                                className="custom-file-input"
-                                                id="customFileLang"
-                                                lang="pt-br"
-                                                onChange={handleChange}
-                                                multiple={false}
-                                            />
-                                            <label className="custom-file-label">
-                                                {file ? file.name : ''}
-                                            </label>
-                                        </div>
+                    <form onSubmit={handleSubmit(cadastrarEvento)}>
+                        <input
+                            className="mb-1 mt-3 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            type="text"
+                            name="name"
+                            {...register('nome')}
+                            placeholder="Nome"
+                        />
+                        <div>
+                            <small className="text-danger">
+                                {errors.nome?.message}
+                            </small>
+                        </div>
+                        <div className={styles.hidden}>
+                            <input
+                                defaultValue={userTokenID}
+                                className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                                type="text"
+                                name="id"
+                                {...register('usuario')}
+                                placeholder="id"
+                            />
+                        </div>
 
-                                        <br />
-                                        <LinkBtn
-                                            nomeBtn={props.nomeBtn}
-                                            tipoBtn={props.tipoBtn}
-                                            formBtn={props.formBtn}
-                                        />
-                                    </form>
-                                </div>
+                        <input
+                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            type="datetime-local"
+                            name="data"
+                            {...register('data')}
+                            placeholder="Data"
+                        />
+
+                        <div>
+                            <small className="text-danger">
+                                {errors.data?.message}
+                            </small>
+                        </div>
+
+                        <textarea
+                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            id="descricao"
+                            rows="3"
+                            {...register('descricao')}
+                            placeholder="Descrição"
+                        ></textarea>
+
+                        <div>
+                            <small className="text-danger">
+                                {errors.descricao?.message}
+                            </small>
+                        </div>
+
+                        <input
+                            className="mb-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            type="text"
+                            name="categoria"
+                            {...register('categoria')}
+                            placeholder="Categoria"
+                        />
+
+                        <div>
+                            <small className="text-danger">
+                                {errors.categoria?.message}
+                            </small>
+                        </div>
+
+                        <input
+                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            type="text"
+                            name="local"
+                            {...register('local')}
+                            placeholder="Local"
+                        />
+
+                        <div>
+                            <small className="text-danger">
+                                {errors.local?.message}
+                            </small>
+                        </div>
+
+                        <input
+                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            type="text"
+                            name="palavraChave"
+                            {...register('palavraChave')}
+                            placeholder="Palavra Chave"
+                        />
+
+                        <div>
+                            <small className="text-danger">
+                                {errors.local?.message}
+                            </small>
+                        </div>
+                        <div className="borda mt-2">
+                            <div className="fields custom-file">
+                                <input
+                                    type="file"
+                                    className="custom-file-input"
+                                    id="customFileLang"
+                                    lang="pt-br"
+                                    onChange={handleChange}
+                                    multiple={false}
+                                />
+                                <label className="custom-file-label">
+                                    {file ? file.name : ''}
+                                </label>
                             </div>
                         </div>
-                    </div>
+
+                        <br />
+                        <div className="text-center">
+                            <LinkBtn
+                                nomeBtn={props.nomeBtn}
+                                tipoBtn={props.tipoBtn}
+                                formBtn={props.formBtn}
+                            />
+                        </div>
+                    </form>
+                    <div>⠀</div>
                 </div>
             </div>
         );

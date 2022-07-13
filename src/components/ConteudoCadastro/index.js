@@ -11,13 +11,20 @@ import '../../../styles/Home.module.css';
 //export default function ConteudoCadastro(props) {
 
 export default function CriarUsuario(props) {
-
-    const schema = yup.object({
-        nome: yup.string().required("Este campo é obrigatório"),
-        sobrenome: yup.string().required("Este campo é obrigatório"),
-        email: yup.string().required("Este campo é obrigatório").email("Insira um email válido"),
-        senha: yup.string().required("Este campo é obrigatório").min(10, "Mínimo de 10 caracteres")
-    }).required();
+    const schema = yup
+        .object({
+            nome: yup.string().required('Este campo é obrigatório'),
+            sobrenome: yup.string().required('Este campo é obrigatório'),
+            email: yup
+                .string()
+                .required('Este campo é obrigatório')
+                .email('Insira um email válido'),
+            senha: yup
+                .string()
+                .required('Este campo é obrigatório')
+                .min(10, 'Mínimo de 10 caracteres')
+        })
+        .required();
 
     const {
         register,
@@ -29,15 +36,14 @@ export default function CriarUsuario(props) {
     });
 
     const cadastrarUsuario = (data) => {
-        try{
-            axios.post('/usuario', data)
-            .then (() => {
-                window.location.href ="/login";})
-        } catch(error){
+        try {
+            axios.post('/usuario', data).then(() => {
+                window.location.href = '/login';
+            });
+        } catch (error) {
             console.log(error);
         }
-        
- 
+
         alert('sucesso');
         reset();
     };

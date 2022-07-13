@@ -6,6 +6,13 @@ export default function Login() {
     return (
         <div>
             <title>Login</title>
+            <style jsx global>
+                {`
+                    body {
+                        background-color: #fff;
+                    }
+                `}
+            </style>
             <HeaderSetaELogo hrefSeta="/" />
             <ConteudoLogin
                 classeDiv={styles.white}

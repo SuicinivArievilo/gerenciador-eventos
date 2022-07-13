@@ -5,7 +5,7 @@ import style from '../../../styles/Home.module.css';
 export default function CardsEventos(props) {
     return (
         <div className="col-md-12 bg-white">
-            <div className="container col-md-5 mt-3 mb-4 shadow-sm card-header">
+            <div className="container col-md-5 mt-3 mb-4 shadow-sm bg-secondary py-2">
                 <div className="text-center img-fluid pt-1">
                     <CardImage idEvento={props.idEvento} />
                 </div>

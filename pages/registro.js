@@ -7,6 +7,13 @@ export default function Registro() {
     return (
         <div>
             <title>Registrar-se</title>
+            <style jsx global>
+                {`
+                    body {
+                        background-color: #fff;
+                    }
+                `}
+            </style>
             <HeaderSetaELogo hrefSeta="/" />
             <CriarUsuario
                 classeDiv={styles.white}
