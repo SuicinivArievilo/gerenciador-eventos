@@ -4,7 +4,7 @@ import  "@fontsource/work-sans";
 import  "@fontsource/comfortaa";
 import axios from  '../src/services/axios';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 
 
 
@@ -12,7 +12,6 @@ import { useEffect } from 'react';
 function MyApp({ Component, pageProps }) {
 
     const { asPath } = useRouter()
-
  useEffect (() => {
 
     if(asPath !== "/" && asPath !== "/registro" && asPath !== "/login" && asPath !== "/recuperarSenha") {
@@ -37,6 +36,25 @@ function MyApp({ Component, pageProps }) {
   
   }
 }
+
+const userTokenID = localStorage.getItem('usertoken')
+
+
+   if(userTokenID !== null) {
+      axios.get('/usuario/' + userTokenID)
+      .then((response) => {
+         ValidacaoDocete(response.data.docente);
+      })
+   }
+
+   async function ValidacaoDocete(docente){
+      await docente;
+      if(docente == false && asPath == "/registroEvento") {
+         window.location.href ="/eventos "
+      }
+        
+      }
+   
     //eslint-disable-next-line
 }, [])
 
