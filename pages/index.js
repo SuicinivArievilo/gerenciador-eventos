@@ -28,7 +28,7 @@ export default function Home() {
               <LogoCompleta classLogo={styles.logo} />
               <ConteudoHomePage
                   titulo="Bem-vindo!"
-                  formBtn="col-6 btn btn-light btn-lg mb-2"
+                  formBtn="col-6 btn bg-secondary btn-lg btn-ligth mb-2 text-primary font-weight-bold "
                   hrefBtn="/login"
                   nomeBtn="Entrar"
                   tipoBtn="submit"

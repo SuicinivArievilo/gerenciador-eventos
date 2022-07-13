@@ -19,7 +19,7 @@ export default function Login() {
                 titulo="Login"
                 hrefBtn="/eventos"
                 nomeBtn="Entrar"
-                formBtn="col-8 btn btn-primary btn-lg mt-4"
+                formBtn="col-8 btn btn-primary btn-lg mt-4 "
             />
         </div>
     );

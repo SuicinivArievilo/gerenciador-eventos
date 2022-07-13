@@ -66,12 +66,12 @@ const handleFiltro = (data) => {
                     <input
                         type={'date'}
                         {...register('dataInicio')}
-                        className="mb-1 pt-2 pb-2 pl-2 pr-2 mr-1 borda bg-light"
+                        className="mb-1 pt-2 pb-2 pl-2 pr-2 mr-1 borda rounded-left bg-light"
                     ></input>
                     <input
                         type={'date'}
                         {...register('dataFinal')}
-                        className="mb-1 pt-2 pb-2 pl-2 pr-2  borda bg-light"
+                        className="mb-1 pt-2 pb-2 pl-2 pr-2  borda rounded-right bg-light"
                     ></input>
                 </div>
                 <div className="container text-right mt-2 col-md-5">

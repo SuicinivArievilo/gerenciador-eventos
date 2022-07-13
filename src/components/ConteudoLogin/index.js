@@ -44,11 +44,13 @@ export default function ConteudoLogin(props) {
 
     return (
         <div className="container col-md-4 mt-4 pt-3">
-            <h1 className="display-4 mt-5 pt-5 text-center">{props.titulo}</h1>
+            <h1 className="display-4 mt-5 pt-5 text-center text-primary">
+                {props.titulo}
+            </h1>
             <div className="mt-4 container text-center">
                 <form onSubmit={handleSubmit(handleSignIn)}>
                     <input
-                        className="mb-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        className="mb-1 pt-3 pb-3 pl-2 pr-2 borda rounded-top col-md-12 bg-light"
                         type="email"
                         name="email"
                         placeholder="Email"
@@ -56,7 +58,7 @@ export default function ConteudoLogin(props) {
                     />
 
                     <input
-                        className="mb-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                        className="mb-0 pt-3 pb-3 pl-2 pr-2 borda rounded-bottom col-md-12 bg-light"
                         type="password"
                         name="senha"
                         placeholder="Senha"

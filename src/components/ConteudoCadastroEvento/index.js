@@ -81,12 +81,12 @@ export default function ConteudoCadastroEvento(props) {
         return (
             <div className={props.classeDiv}>
                 <div className="container col-md-4">
-                    <h1 className="display-4 mt-4 pt-3 text-center">
+                    <h2 className="display-4 mt-4 pt-3 text-center text-primary">
                         {props.titulo}
-                    </h1>
+                    </h2>
                     <form onSubmit={handleSubmit(cadastrarEvento)}>
                         <input
-                            className="mb-1 mt-3 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            className="mb-0 mt-3 pt-3 pb-3 pl-2 pr-2 borda rounded-top col-md-12 bg-light"
                             type="text"
                             name="name"
                             {...register('nome')}
@@ -100,7 +100,7 @@ export default function ConteudoCadastroEvento(props) {
                         <div className={styles.hidden}>
                             <input
                                 defaultValue={userTokenID}
-                                className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                                className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                                 type="text"
                                 name="id"
                                 {...register('usuario')}
@@ -109,7 +109,7 @@ export default function ConteudoCadastroEvento(props) {
                         </div>
 
                         <input
-                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                             type="datetime-local"
                             name="data"
                             {...register('data')}
@@ -123,7 +123,7 @@ export default function ConteudoCadastroEvento(props) {
                         </div>
 
                         <textarea
-                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                             id="descricao"
                             rows="3"
                             {...register('descricao')}
@@ -137,7 +137,7 @@ export default function ConteudoCadastroEvento(props) {
                         </div>
 
                         <input
-                            className="mb-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            className="mb-0 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                             type="text"
                             name="categoria"
                             {...register('categoria')}
@@ -151,7 +151,7 @@ export default function ConteudoCadastroEvento(props) {
                         </div>
 
                         <input
-                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                             type="text"
                             name="local"
                             {...register('local')}
@@ -165,7 +165,7 @@ export default function ConteudoCadastroEvento(props) {
                         </div>
 
                         <input
-                            className="mb-1 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
+                            className="mb-0 mt-1 pt-3 pb-3 pl-2 pr-2 borda col-md-12 bg-light"
                             type="text"
                             name="palavraChave"
                             {...register('palavraChave')}
@@ -177,7 +177,7 @@ export default function ConteudoCadastroEvento(props) {
                                 {errors.local?.message}
                             </small>
                         </div>
-                        <div className="borda mt-2">
+                        <div className="borda rounded-bottom mt-2">
                             <div className="fields custom-file">
                                 <input
                                     type="file"
