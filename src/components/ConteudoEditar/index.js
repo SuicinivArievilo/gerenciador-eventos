@@ -36,19 +36,27 @@ export default function EditarEvento(props) {
     });
 
 
-    const cadastrarEvento = async (data) => {
-        //Realizando cadastro de evento
-        const response = await axios.put(
-            'http://18.231.37.81:3000/evento',
-            data
-        );
-        console.log(data);
-    };
-
-// Retornar dados do evento atual para os campos.
 const router = useRouter();
 
 const idRouter = router.query.EditarEvento;
+
+  
+    const AtualizarEvento = async (data) => {
+        //Realizando cadastro de evento
+        const response = await data
+         try { 
+            axios.put(
+            'http://18.231.37.81:3000/evento'+idRouter,
+            data
+        );
+        console.log(data);}
+        catch (error) {
+            console.log("Esse e o erro"+error);
+        }
+    };
+
+// Retornar dados do evento atual para os campos.
+
 
 console.log('Esse é o ID Router ->:' + idRouter);
 
@@ -85,7 +93,7 @@ useEffect(() => {
                     <div className="contact-content">
                         <div className="column right">
                             <div className="album py-5 container">
-                                <form onSubmit={handleSubmit(cadastrarEvento)}>
+                                <form onSubmit={handleSubmit(AtualizarEvento)}>
                                     <span>{errors.nome?.message}</span>
                                     <div className="fields mb-3 borda">
                                         <div className="field name">

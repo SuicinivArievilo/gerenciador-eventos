@@ -30,9 +30,9 @@ export default function CriarUsuario(props) {
 
     const cadastrarUsuario = (data) => {
         try{
-            axios.post('/usuario', data);
-
-            window.location.href ="/login"
+            axios.post('/usuario', data)
+            .then (() => {
+                window.location.href ="/login";})
         } catch(error){
             console.log(error);
         }
