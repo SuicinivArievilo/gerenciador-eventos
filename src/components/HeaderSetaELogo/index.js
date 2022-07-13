@@ -22,7 +22,7 @@ export default function HeaderSetaELogo(props) {
               />
               <LogoCompleta classLogo={Styles.classLogo} />
           </div>
-          <div className="mb-5 pb-5">⠀</div>
+          <div className="mb-5 pb-4">⠀</div>
       </>
   );
 }
