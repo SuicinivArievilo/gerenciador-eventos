@@ -137,7 +137,7 @@ m114 -19 c45 -21 69 -73 61 -133 -5 -43 -67 -180 -101 -225 -15 -20 -15 -20
                                     hrefBtn={props.hrefBtn}
                                     nomeBtn={props.nomeBtn}
                                     tipoBtn={props.tipoBtn}
-                                    formBtn={props.formBtn}
+                                    formBtn={"btn btn-md btn-primary p-2 pl-4 pr-4 mb-1"}
                                 />
                             </div>
                         </div>

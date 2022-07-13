@@ -61,14 +61,6 @@ export default function Detalhes() {
                     nomeBtn="Enviar Foto"
                     formBtn="btn btn-md m-1 btn-primary"
                 />
-
-                <BotaoEvento
-                    titulo="#"
-                    hrefBtn="/eventos"
-                    tipoBtn="submit"
-                    nomeBtn="Entrar"
-                    formBtn=""
-                />
             </div>
         ) : (
             <div></div>

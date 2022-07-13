@@ -77,7 +77,7 @@ const handleFiltro = (data) => {
                 <div className="container text-right mt-2 col-md-5">
                     <button
                         type="submit"
-                        className="btn btn-primary btn-lg px-4 "
+                        className="btn btn-md btn-primary p-2 pl-4 pr-4 mb-1 "
                     >
                         Pesquisar
                     </button>
@@ -101,17 +101,8 @@ const handleFiltro = (data) => {
                     hrefBtn={'detalhes/' + eventoPassado._id}
                     tipoBtn="submit"
                     nomeBtn="Visualizar"
-                    formBtn="btn btn-primary btn-lg m-1"
                 />
             ))}
-
-            <BotaoEvento
-                titulo="#"
-                hrefBtn="/eventos"
-                tipoBtn="submit"
-                nomeBtn="Entrar"
-                formBtn=""
-            />
             <div>⠀</div>
         </div>
     );

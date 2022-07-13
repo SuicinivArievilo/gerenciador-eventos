@@ -5,6 +5,7 @@ import  "@fontsource/comfortaa";
 import axios from  '../src/services/axios';
 import { useRouter } from 'next/router';
 import { useEffect,useState } from 'react';
+import BotaoEvento from '/src/components/BotaoEvento';
 
 
 
@@ -58,7 +59,9 @@ const userTokenID = localStorage.getItem('usertoken')
     //eslint-disable-next-line
 }, [])
 
-  return(<Component {...pageProps} />) 
+  return(<>
+  <Component {...pageProps} />
+  <BotaoEvento /></>) 
           
 }
 

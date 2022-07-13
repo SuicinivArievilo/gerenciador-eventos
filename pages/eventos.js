@@ -42,17 +42,9 @@ export default function Eventos() {
                     hrefBtn={'detalhes/' + evento._id}
                     nomeBtn="Visualizar"
                     tipoBtn="submit"
-                    formBtn="btn btn-lg btn-primary p-2 pl-4 pr-4 mb-1"
                 />
             ))}
 
-            <BotaoEvento
-                titulo="#"
-                hrefBtn="/eventos"
-                tipoBtn="submit"
-                nomeBtn="Entrar"
-                formBtn=""
-            />
             <div>⠀</div>
         </div>
     );

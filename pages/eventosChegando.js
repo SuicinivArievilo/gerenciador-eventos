@@ -43,17 +43,8 @@ export default function eventosChegando() {
                     hrefBtn={'detalhes/' + eventoFuturo._id}
                     tipoBtn="submit"
                     nomeBtn="Visualizar"
-                    formBtn="btn btn-primary btn-lg m-1 w-40"
                 />
             ))}
-
-            <BotaoEvento
-                titulo="#"
-                hrefBtn="/eventos"
-                tipoBtn="submit"
-                nomeBtn="Entrar"
-                formBtn=""
-            />
             <div>⠀</div>
         </div>
     );
