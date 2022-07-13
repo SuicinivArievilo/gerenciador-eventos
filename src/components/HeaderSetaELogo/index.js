@@ -7,7 +7,7 @@ import Styles from '../../../styles/Home.module.css'
 export default function HeaderSetaELogo(props) {
   return (
       <>
-          <div className="pt-2 pb-1 d-flex justify-content-between fixed-top">
+          <div className="pt-2 d-flex justify-content-between fixed-top">
               <style jsx>
                   {`
                       div {
@@ -22,7 +22,7 @@ export default function HeaderSetaELogo(props) {
               />
               <LogoCompleta classLogo={Styles.classLogo} />
           </div>
-          <div className="mb-5 pb-4">⠀</div>
+          <div className="mb-5 pb-5">⠀</div>
       </>
   );
 }
