@@ -34,7 +34,7 @@ useEffect(() => {
 
 const handleFiltro = (data) => {
     try {
-        axios.post('/evento/listarEventoPeriodo',{
+        axios.post('/listarEventoPeriodo',{
             dataInicio: data.dataInicio,
             dataFim : data.dataFinal
         })
