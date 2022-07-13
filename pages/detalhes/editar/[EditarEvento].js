@@ -12,16 +12,16 @@ export default function Editar() {
 
 
     return (
-
-                <div>
-                    <HeaderSetaELogo hrefSeta={"/detalhes"+idRouter} />
-                    <EditarEvento
-                        classeDiv={styles.white}
-                        titulo="Editar evento"
-                        tipoBtn="submit"
-                        nomeBtn="Enviar"
-                        formBtn="btn btn-lg m-1 btn-primary"
-                    />
-                </div>
-    )
+        <div>
+            <title>Editar Evento</title>
+            <HeaderSetaELogo hrefSeta={'/detalhes' + idRouter} />
+            <EditarEvento
+                classeDiv={styles.white}
+                titulo="Editar evento"
+                tipoBtn="submit"
+                nomeBtn="Salvar"
+                formBtn="btn btn-lg btn-primary p-2 pl-4 pr-4 mb-1"
+            />
+        </div>
+    );
 } 

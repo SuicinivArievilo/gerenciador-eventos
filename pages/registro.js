@@ -6,13 +6,21 @@ import CriarUsuario from '../src/components/ConteudoCadastro';
 export default function Registro() {
     return (
         <div>
-            <HeaderSetaELogo hrefSeta="/"/>
+            <title>Registrar-se</title>
+            <style jsx global>
+                {`
+                    body {
+                        background-color: #fff;
+                    }
+                `}
+            </style>
+            <HeaderSetaELogo hrefSeta="/" />
             <CriarUsuario
                 classeDiv={styles.white}
                 titulo="Cadastro"
                 tipoBtn="submit"
-                nomeBtn="Enviar"
-                formBtn="btn btn-lg m-1 btn-primary"
+                nomeBtn="Confirmar"
+                formBtn="col-8 btn btn-primary btn-lg mt-5"
             />
         </div>
     );

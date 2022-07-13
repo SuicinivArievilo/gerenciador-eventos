@@ -5,13 +5,14 @@ import HeaderSetaELogo from '../src/components/HeaderSetaELogo';
 export default function RegistroEvento() {
     return (
         <div>
+            <title>Novo Evento</title>
             <HeaderSetaELogo hrefSeta="/eventos" />
             <ConteudoCadastroEvento
                 classeDiv={styles.white}
                 titulo="Novo Evento"
                 tipoBtn="submit"
-                nomeBtn="Enviar"
-                formBtn="btn btn-lg m-1 btn-primary"
+                nomeBtn="Cadastrar"
+                formBtn="btn btn-lg btn-primary p-2 pl-4 pr-4 mb-1"
             />
         </div>
     );

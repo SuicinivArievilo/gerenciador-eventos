@@ -5,13 +5,21 @@ import ConteudoLogin from '../src/components/ConteudoLogin';
 export default function Login() {
     return (
         <div>
-            <HeaderSetaELogo hrefSeta="/"/>
+            <title>Login</title>
+            <style jsx global>
+                {`
+                    body {
+                        background-color: #fff;
+                    }
+                `}
+            </style>
+            <HeaderSetaELogo hrefSeta="/" />
             <ConteudoLogin
                 classeDiv={styles.white}
                 titulo="Login"
                 hrefBtn="/eventos"
                 nomeBtn="Entrar"
-                formBtn="btn btn-primary btn-lg m-1 w-50"
+                formBtn="col-8 btn btn-primary btn-lg mt-4 "
             />
         </div>
     );

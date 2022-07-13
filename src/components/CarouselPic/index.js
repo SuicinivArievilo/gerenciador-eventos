@@ -27,30 +27,27 @@ export default function Carousel(props) {
     }, []);
 
     return (
-        <div>
+        <div className="mb-3 mt-3">
             <Swiper
-        slidesPerView={1}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-        
-      >
+                slidesPerView={1}
+                pagination={{
+                    clickable: true
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
                 {urlImagens?.map((url) => (
-                    <div key={url._id} className='card-body'>
-                    <SwiperSlide key={url._id}> 
-                        <Image
-                            src={url.url}
-                            alt={'Banner'}
-                            key={url._id}
-                            objectFit='cover'
-                            width={600}
-                            height={300}
-                           
-                            
-                        />
-                    </SwiperSlide>
+                    <div key={url._id} className="card-body">
+                        <SwiperSlide key={url._id}>
+                            <Image
+                                src={url.url}
+                                alt={'Banner'}
+                                key={url._id}
+                                objectFit="cover"
+                                width={1920}
+                                height={1080}
+                            />
+                        </SwiperSlide>
                     </div>
                 ))}
             </Swiper>

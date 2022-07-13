@@ -24,21 +24,22 @@
 }
 
 .navCustomLink {
-  color: #FFFFFF;
+  color: #E8E8E8;
   display: block;
-  padding: 0.5rem 1.5rem;
+  padding: 0.67rem 1.5rem;
   text-decoration: none;
 }
 .navActive{
-  background-color: #FFFFFF;
+  background-color: #E8E8E8;
   color: #023160;
   display: block;
-  padding: 0.5rem 1.5rem;
+  padding: 0.67rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
 }
 .navBg{
   background-color: #023160;
+  color: #E8E8E8;
 }
 
 .roundedBanner img{

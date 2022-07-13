@@ -43,40 +43,31 @@ export default function Detalhes() {
     return typeof detalhes.nome !== 'undefined' ? (
         detalhes ? (
             <div>
+                <title>Evento</title>
                 <HeaderSetaELogo hrefSeta="/eventos" />
                 <DescricaoEvento
                     idRouter={idRouter}
                     key={detalhes?._id}
                     tituloEvento={detalhes?.nome}
                     docenteEvento={usuarioDocente?.nome}
-                    dataEvento={moment.utc(detalhes?.data).format('DD/MM/YYYY HH:mm')}
+                    dataEvento={moment
+                        .utc(detalhes?.data)
+                        .format('DD/MM/YYYY HH:mm')}
                     localEvento={detalhes?.local}
                     categEvento={detalhes?.categoria}
                     descEvento={detalhes?.descricao}
                     titulo="Enviar Foto"
                     tipoBtn="submit"
                     nomeBtn="Enviar Foto"
-                    formBtn="btn btn-lg m-1 btn-primary"
+                    formBtn="btn btn-md m-1 btn-primary"
                 />
-
-                <BotaoEvento
-                    titulo="#"
-                    hrefBtn="/eventos"
-                    tipoBtn="submit"
-                    nomeBtn="Entrar"
-                    formBtn="btn btn-primary btn-lg m-1 w-40"
-                />
-
             </div>
-
-    
         ) : (
             <div></div>
         )
     ) : (
         <div>
             <HeaderSetaELogo hrefSeta="/eventos" />
-            <h4>infelizmente não encontramos um evento para essa pagina</h4>
         </div>
     );
 }
