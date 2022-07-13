@@ -3,7 +3,7 @@ import LinkNX from "../LinkNX";
 export default function HeaderHoje(props) {
   return (
       <>
-          <nav className="fixed-top navbar navbar-dark justify-content-center bg-primary">
+          <nav className="fixed-top navbar justify-content-center bg-primary">
               <div>
                   <ul className="nav nav-pills mb-2" role="tablist">
                       <li className="nav-item">
@@ -13,6 +13,7 @@ export default function HeaderHoje(props) {
                               formLink={props.formPassados}
                           />
                       </li>
+                      <span className="border-right mx-1"></span>
                       <li className="nav-item">
                           <LinkNX
                               hrefLink="/eventos"
@@ -20,6 +21,7 @@ export default function HeaderHoje(props) {
                               formLink={props.formHoje}
                           />
                       </li>
+                      <span className="border-left mx-1"></span>
                       <li className="nav-item">
                           <LinkNX
                               hrefLink="/eventosChegando"

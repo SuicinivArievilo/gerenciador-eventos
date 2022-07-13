@@ -167,7 +167,7 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: #fff;
 }
 
 a:not([href]):not([tabindex]) {
@@ -3933,6 +3933,11 @@ input[type="button"].btn-block {
 .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #007bff;
+}
+.nav-item{
+
+  font-size: 0.97rem;
+
 }
 
 .nav-fill .nav-item {
