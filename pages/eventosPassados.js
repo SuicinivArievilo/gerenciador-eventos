@@ -57,15 +57,36 @@ const handleFiltro = (data) => {
                 formChegando={styles.navCustomLink}
                 headerBg={styles.navBg}
             />
-            <form onSubmit={handleSubmit(handleFiltro)}> 
-                <input type={'date'} {...register('dataInicio')}></input>
-                <input type={'date'} {...register('dataFinal')}></input>
-                <button type="submit">
-                        Filtrar
+
+            <form onSubmit={handleSubmit(handleFiltro)}>
+                <div className="container text-center col-md-12">
+                    <h5 className="text-left text-primary mb-3">
+                        Selecione um Período:
+                    </h5>
+                    <input
+                        type={'date'}
+                        {...register('dataInicio')}
+                        className="mb-1 pt-2 pb-2 pl-2 pr-2 mr-1 borda bg-light"
+                    ></input>
+                    <input
+                        type={'date'}
+                        {...register('dataFinal')}
+                        className="mb-1 pt-2 pb-2 pl-2 pr-2  borda bg-light"
+                    ></input>
+                </div>
+                <div className="container text-right mt-2">
+                    <button
+                        type="submit"
+                        className="btn btn-primary btn-lg px-4 "
+                    >
+                        Pesquisar
                     </button>
+                </div>
             </form>
 
-
+            <h5 className="container text-left text-primary mb-3">
+                Resultado:
+            </h5>
 
             {eventosPassados?.map((eventoPassado) => (
                 <CardsEventos
@@ -80,7 +101,7 @@ const handleFiltro = (data) => {
                     hrefBtn={'detalhes/' + eventoPassado._id}
                     tipoBtn="submit"
                     nomeBtn="Visualizar"
-                    formBtn="btn btn-primary btn-lg m-1 w-40"
+                    formBtn="btn btn-primary btn-lg m-1"
                 />
             ))}
 

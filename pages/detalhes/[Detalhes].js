@@ -59,7 +59,7 @@ export default function Detalhes() {
                     titulo="Enviar Foto"
                     tipoBtn="submit"
                     nomeBtn="Enviar Foto"
-                    formBtn="btn btn-lg m-1 btn-primary"
+                    formBtn="btn btn-md m-1 btn-primary"
                 />
 
                 <BotaoEvento

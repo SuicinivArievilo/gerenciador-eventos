@@ -222,8 +222,8 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                         <Carousel idEvento={props.idRouter} />
 
                         <form onSubmit={handleSubmit(cadastrarFoto)}>
-                            <div className="input-group">
-                                <div className="fields mb-3 custom-file">
+                            <div className="borda mt-2">
+                                <div className="custom-file">
                                     <input
                                         type="file"
                                         className="custom-file-input"
@@ -237,13 +237,13 @@ m70 0 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25 0 20 5 25 25 25 20 0 25 -5
                                     </label>
                                 </div>
                             </div>
-
-                            <br />
-                            <LinkBtn
-                                nomeBtn={props.nomeBtn}
-                                tipoBtn={props.tipoBtn}
-                                formBtn={props.formBtn}
-                            />
+                            <div className="mb-1 mt-1">
+                                <LinkBtn
+                                    nomeBtn={props.nomeBtn}
+                                    tipoBtn={props.tipoBtn}
+                                    formBtn={props.formBtn}
+                                />
+                            </div>
                         </form>
                     </div>
                 </div>
